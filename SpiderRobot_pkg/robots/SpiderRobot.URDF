@@ -1,0 +1,1087 @@
+<robot
+  name="SpiderRobot">
+  <link
+    name="Link_Base">
+    <inertial>
+      <origin
+        xyz="0.092998 -0.23315 0.16338"
+        rpy="0 0 0" />
+      <mass
+        value="0.20744" />
+      <inertia
+        ixx="0.0010006"
+        ixy="-4.7058E-19"
+        ixz="4.8231E-07"
+        iyy="0.00099647"
+        iyz="-5.274E-19"
+        izz="0.0017333" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_Base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link_00">
+    <inertial>
+      <origin
+        xyz="0.063911 0.0063284 -0.029431"
+        rpy="0 0 0" />
+      <mass
+        value="0.20143" />
+      <inertia
+        ixx="0.00016993"
+        ixy="3.7525E-07"
+        ixz="4.1784E-08"
+        iyy="0.00016576"
+        iyz="1.1618E-05"
+        izz="8.1534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_00.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_00.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_00"
+    type="revolute">
+    <origin
+      xyz="0.21137 -0.09086 0.16867"
+      rpy="-1.5708 -5.3027E-17 -1.0472" />
+    <parent
+      link="Link_Base" />
+    <child
+      link="Link_00" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_01">
+    <inertial>
+      <origin
+        xyz="0.02413 -0.015875 0.02286"
+        rpy="0 0 0" />
+      <mass
+        value="0.015683" />
+      <inertia
+        ixx="6.6059E-06"
+        ixy="-8.4703E-22"
+        ixz="-5.808E-22"
+        iyy="1.0234E-05"
+        iyz="5.2268E-22"
+        izz="1.532E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_01.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_01.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_01"
+    type="revolute">
+    <origin
+      xyz="0.08812 -0.02286 0.04445"
+      rpy="1.5708 6.6613E-16 3.1416" />
+    <parent
+      link="Link_00" />
+    <child
+      link="Link_01" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_02">
+    <inertial>
+      <origin
+        xyz="0.024319 0.012686 0.039333"
+        rpy="0 0 0" />
+      <mass
+        value="0.082362" />
+      <inertia
+        ixx="7.7214E-05"
+        ixy="1.1967E-07"
+        ixz="-6.1172E-09"
+        iyy="8.6937E-05"
+        iyz="-1.0754E-07"
+        izz="1.754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_02.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_02.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_02"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link_01" />
+    <child
+      link="Link_02" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_10">
+    <inertial>
+      <origin
+        xyz="7.9382E-05 0.032178 0.0073986"
+        rpy="0 0 0" />
+      <mass
+        value="0.20143" />
+      <inertia
+        ixx="0.00016992"
+        ixy="3.7534E-07"
+        ixz="-4.1624E-08"
+        iyy="0.00016576"
+        iyz="-1.1618E-05"
+        izz="8.1534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_10.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_10"
+    type="revolute">
+    <origin
+      xyz="0.09291 -0.096239 0.13016"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="Link_Base" />
+    <child
+      link="Link_10" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_11">
+    <inertial>
+      <origin
+        xyz="1.49047441055927E-14 -1.41830991395864E-14 -0.0285749999999704"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156829833047926" />
+      <inertia
+        ixx="6.60589614129108E-06"
+        ixy="2.25106178579062E-22"
+        ixz="8.23949438285242E-23"
+        iyy="1.53200173406597E-05"
+        iyz="-1.32771265675563E-22"
+        izz="1.02342708551316E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_11"
+    type="revolute">
+    <origin
+      xyz="0 0.038506 0.03683"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="Link_10" />
+    <child
+      link="Link_11" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_12">
+    <inertial>
+      <origin
+        xyz="0.024319 0.012686 0.039333"
+        rpy="0 0 0" />
+      <mass
+        value="0.082362" />
+      <inertia
+        ixx="7.7214E-05"
+        ixy="1.1968E-07"
+        ixz="-6.1258E-09"
+        iyy="8.6937E-05"
+        iyz="-1.0753E-07"
+        izz="1.754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_12"
+    type="revolute">
+    <origin
+      xyz="0.02413 0.02286 -0.04445"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="Link_11" />
+    <child
+      link="Link_12" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_20">
+    <inertial>
+      <origin
+        xyz="7.9384E-05 0.032178 0.0073986"
+        rpy="0 0 0" />
+      <mass
+        value="0.20143" />
+      <inertia
+        ixx="0.00016992"
+        ixy="3.7534E-07"
+        ixz="-4.1637E-08"
+        iyy="0.00016576"
+        iyz="-1.1618E-05"
+        izz="8.1534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_20.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_20.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_20"
+    type="revolute">
+    <origin
+      xyz="-0.025655 -0.16469 0.13016"
+      rpy="1.5708 -5.3027E-17 -2.0944" />
+    <parent
+      link="Link_Base" />
+    <child
+      link="Link_20" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_21">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 -0.028575"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156829833047926" />
+      <inertia
+        ixx="6.60589614129111E-06"
+        ixy="1.25886949684521E-22"
+        ixz="2.11758236813575E-22"
+        iyy="1.53200173406597E-05"
+        iyz="8.22409768924959E-23"
+        izz="1.02342708551317E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_21.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_21"
+    type="revolute">
+    <origin
+      xyz="0 0.038506 0.03683"
+      rpy="3.1416 3.3307E-16 3.1416" />
+    <parent
+      link="Link_20" />
+    <child
+      link="Link_21" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_22">
+    <inertial>
+      <origin
+        xyz="0.024319 0.012686 0.039333"
+        rpy="0 0 0" />
+      <mass
+        value="0.082362" />
+      <inertia
+        ixx="7.7215E-05"
+        ixy="1.1974E-07"
+        ixz="-6.0699E-09"
+        iyy="8.6937E-05"
+        iyz="-1.0747E-07"
+        izz="1.754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_22"
+    type="revolute">
+    <origin
+      xyz="0.02413 0.02286 -0.04445"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="Link_21" />
+    <child
+      link="Link_22" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_30">
+    <inertial>
+      <origin
+        xyz="7.9365E-05 0.032178 0.0073986"
+        rpy="0 0 0" />
+      <mass
+        value="0.20143" />
+      <inertia
+        ixx="0.00016993"
+        ixy="3.7525E-07"
+        ixz="-4.1784E-08"
+        iyy="0.00016576"
+        iyz="-1.1618E-05"
+        izz="8.1534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_30.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_30.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_30"
+    type="revolute">
+    <origin
+      xyz="-0.025655 -0.3016 0.13016"
+      rpy="1.5708 -5.3027E-17 -1.0472" />
+    <parent
+      link="Link_Base" />
+    <child
+      link="Link_30" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_31">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-16 -1.38777878078145E-16 -0.0285749999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156829833047926" />
+      <inertia
+        ixx="6.6058961412911E-06"
+        ixy="2.75510256767986E-21"
+        ixz="-6.56450534122083E-21"
+        iyy="1.53200173406597E-05"
+        iyz="2.59976339912298E-21"
+        izz="1.02342708551317E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_31.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_31.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_31"
+    type="revolute">
+    <origin
+      xyz="0 0.038506 0.03683"
+      rpy="-3.1416 6.6613E-16 3.4694E-16" />
+    <parent
+      link="Link_30" />
+    <child
+      link="Link_31" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_32">
+    <inertial>
+      <origin
+        xyz="0.024319 0.012686 0.039333"
+        rpy="0 0 0" />
+      <mass
+        value="0.082362" />
+      <inertia
+        ixx="7.7214E-05"
+        ixy="1.1967E-07"
+        ixz="-6.1172E-09"
+        iyy="8.6937E-05"
+        iyz="-1.0754E-07"
+        izz="1.754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_32.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_32.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_32"
+    type="revolute">
+    <origin
+      xyz="-0.02413 -0.02286 -0.04445"
+      rpy="-1.5708 -2.498E-15 3.4694E-16" />
+    <parent
+      link="Link_31" />
+    <child
+      link="Link_32" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_40">
+    <inertial>
+      <origin
+        xyz="7.9382E-05 0.032178 0.0073986"
+        rpy="0 0 0" />
+      <mass
+        value="0.20143" />
+      <inertia
+        ixx="0.00016992"
+        ixy="3.7534E-07"
+        ixz="-4.1624E-08"
+        iyy="0.00016576"
+        iyz="-1.1618E-05"
+        izz="8.1534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_40.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_40.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_40"
+    type="revolute">
+    <origin
+      xyz="0.09291 -0.37005 0.13016"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Link_Base" />
+    <child
+      link="Link_40" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_41">
+    <inertial>
+      <origin
+        xyz="-4.16333634234434E-17 0 0.028575"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156829833047926" />
+      <inertia
+        ixx="6.60589614129109E-06"
+        ixy="-1.33581727993433E-22"
+        ixz="9.11191143515447E-22"
+        iyy="1.53200173406597E-05"
+        iyz="3.13155305494476E-22"
+        izz="1.02342708551316E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_41.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_41.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_41"
+    type="revolute">
+    <origin
+      xyz="0 0.038506 0.03683"
+      rpy="0 0 0" />
+    <parent
+      link="Link_40" />
+    <child
+      link="Link_41" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_42">
+    <inertial>
+      <origin
+        xyz="0.024319 0.012686 0.039333"
+        rpy="0 0 0" />
+      <mass
+        value="0.082362" />
+      <inertia
+        ixx="7.7214E-05"
+        ixy="1.1968E-07"
+        ixz="-6.1258E-09"
+        iyy="8.6937E-05"
+        iyz="-1.0753E-07"
+        izz="1.754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_42.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_42.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_42"
+    type="revolute">
+    <origin
+      xyz="-0.02413 0.02286 0.04445"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Link_41" />
+    <child
+      link="Link_42" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_50">
+    <inertial>
+      <origin
+        xyz="7.9384E-05 0.032178 0.0073986"
+        rpy="0 0 0" />
+      <mass
+        value="0.20143" />
+      <inertia
+        ixx="0.00016992"
+        ixy="3.7534E-07"
+        ixz="-4.1637E-08"
+        iyy="0.00016576"
+        iyz="-1.1618E-05"
+        izz="8.1534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_50.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_50.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_50"
+    type="revolute">
+    <origin
+      xyz="0.21147 -0.3016 0.13016"
+      rpy="1.5708 5.3027E-17 1.0472" />
+    <parent
+      link="Link_Base" />
+    <child
+      link="Link_50" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_51">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -8.32667268468867E-17 0.0285749999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156829833047926" />
+      <inertia
+        ixx="6.6058961412911E-06"
+        ixy="1.22637354249833E-21"
+        ixz="9.10560418298373E-21"
+        iyy="1.53200173406597E-05"
+        iyz="2.0681458393273E-21"
+        izz="1.02342708551317E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_51.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_51.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_51"
+    type="revolute">
+    <origin
+      xyz="0 0.038506 0.03683"
+      rpy="0 0 0" />
+    <parent
+      link="Link_50" />
+    <child
+      link="Link_51" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="Link_52">
+    <inertial>
+      <origin
+        xyz="0.024319 0.012686 0.039333"
+        rpy="0 0 0" />
+      <mass
+        value="0.082362" />
+      <inertia
+        ixx="7.7214E-05"
+        ixy="1.1974E-07"
+        ixz="-6.0787E-09"
+        iyy="8.6937E-05"
+        iyz="-1.0747E-07"
+        izz="1.754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_52.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SpiderRobot/meshes/Link_52.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_52"
+    type="revolute">
+    <origin
+      xyz="-0.02413 0.02286 0.04445"
+      rpy="1.5708 -2.387E-15 0" />
+    <parent
+      link="Link_51" />
+    <child
+      link="Link_52" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="1.57" />
+  </joint>
+</robot>

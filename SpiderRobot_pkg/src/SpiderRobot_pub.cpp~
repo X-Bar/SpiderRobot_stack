@@ -1,0 +1,54 @@
+/***********************************************************************************************************************
+FILENAME:   SpiderRobot.cpp
+AUTHORS:    Cody L. Lundberg
+
+DESCRIPTION:
+Planning node for SpiderRobot package
+
+PUBLISHES:  "MyArray" SpiderRobot/MyArray
+SUBSCRIBES: NA
+SERVICES:   NA
+
+REVISION HISTORY:
+05.20.2013   CDM     Cody L. Lundberg original file creation
+
+***********************************************************************************************************************/
+
+#include "ros/ros.h"
+#include "std_msgs/Int16.h"
+#include "std_msgs/Bool.h"
+#include <geometry_msgs/TwistStamped.h>
+#include <iostream>
+
+#include <stdio.h>
+#include <signal.h>
+#include <string.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <termios.h>
+#include <unistd.h>
+#include <math.h>
+
+#include <SpiderRobot/MyArray.h>
+bool SHUTDOWN = false;
+
+int main(int argc, char **argv)
+{
+	ros::init(argc, argv, "SpiderRobotMain");
+	ros::NodeHandle nh;
+	ros::Publisher SpiderRobotMain_pub = nh.advertise<SpiderRobot::MyArray>("MyArray", 1000);
+	std_msgs::String cds_pub;
+
+	
+
+}
+
+void shutdownHandler(int s)
+{
+    ROS_INFO("SHUTDOWN COMMAND DETECTED...");
+    SHUTDOWN = true;
+}
+
+
+
+

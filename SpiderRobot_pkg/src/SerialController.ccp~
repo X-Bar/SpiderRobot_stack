@@ -1,0 +1,375 @@
+/***********************************************************************************************************************
+FILENAME:   SerialController.cpp
+AUTHORS:    Cody L. Lundberg based on code from Christopher D. McMurrough (base_controller.cpp for IGVC)
+
+DESCRIPTION:
+ROS interface node serial commands. Recieves topic, converts to serial commands and sends them
+
+PUBLISHES:  NA
+SUBSCRIBES: "cmd_vel" geometry_msgs/TwistStamped, "autonomous_enabled" std_msgs/Bool
+SERVICES:   NA
+
+REVISION HISTORY:
+05.06.2013   CDM     Christopher D. McMurrough original file creation
+05.17.2013           Cody L. Lundberg reuse. Focus on making code more general.
+***********************************************************************************************************************/
+
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+#include "std_msgs/Bool.h"
+#include <geometry_msgs/TwistStamped.h>
+#include <iostream>
+
+#include <stdio.h>
+#include <signal.h>
+#include <string.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <termios.h>
+#include <unistd.h>
+
+#include <math.h>
+
+#define SERIAL_PACKET_START_CHAR 0xAA
+#define SERIAL_PACKET_LENGTH 0x08
+#define PI 3.14159265
+
+bool SHUTDOWN = false;
+
+unsigned char MOTOR_1A_COMMAND = 0;
+unsigned char MOTOR_1B_COMMAND = 0;
+unsigned char MOTOR_2A_COMMAND = 0;
+unsigned char MOTOR_2B_COMMAND = 0;
+
+ros::Time LAST_COMMAND_TS;
+
+unsigned char SAFETY_LIGHT_STATE = 0;
+const int SAFETY_LIGHT_CYCLE = 20;
+int AUTONOMY_STATE = 0;
+
+// define the timeout duration
+double TIMEOUT_SECONDS = 0.5;
+
+void motionCommandCallback(const geometry_msgs::TwistStamped::ConstPtr& msg);
+int openSerialPort(char* portName);
+void closeSerialPort(int serialPort);
+void writeSerialBytes(int serialPort, unsigned char* data, int numBytes)
+void makeTeensyPacket(unsigned char* buffer, unsigned char m1a_val, unsigned char m1b_val, unsigned char m2a_val, unsigned char m2b_val, unsigned char light) // change to make type of packet thing
+void sendBaseCommand(int serialPort, unsigned char m1a_val, unsigned char m1b_val, unsigned char m2a_val, unsigned char m2b_val, unsigned char light) // sends commands via serial
+void pollSerialPort(int serialPort) // read port
+void shutdownHandler(int s);
+
+/***********************************************************************************************************************
+int main(int argc, char **argv)
+program entry point, expects the serial port name and baud rate as command line arguments
+***********************************************************************************************************************/
+int main(int argc, char **argv)
+{
+    // store the serial port parameters
+    char* portName;
+    int serialPort;
+
+    // validate and parse the command line arguments
+    /*
+    if(argc != 2)
+    {
+        ROS_WARN("USAGE: %s <port_name> \n", argv[0]);
+        return 0;
+    }
+    */
+    portName = "/dev/ttyACM0";
+
+
+    // attempt to open the serial port
+    serialPort = openSerialPort(portName);
+
+    // check to see if we connected successfully
+    if(serialPort == -1)
+    {
+        printf("unable to open serial port %s \n", portName);
+        return(0);
+    }
+
+    // set up the shutdown handler
+    struct sigaction sigIntHandler;
+    sigIntHandler.sa_handler = shutdownHandler;
+    sigemptyset(&sigIntHandler.sa_mask);
+    sigIntHandler.sa_flags = 0;
+    sigaction(SIGINT, &sigIntHandler, NULL);
+
+    // initialize the ROS node
+    ros::init(argc, argv, "base_controller");
+    ros::NodeHandle nh;
+
+    // shutdown the device until a command is received
+    LAST_COMMAND_TS = ros::Time::now() - ros::Duration(TIMEOUT_SECONDS);
+    stopMotors(serialPort);
+
+    // set the loop rate to 20 Hz
+    ros::Rate loop_rate(50);
+
+    // store the light blinking counter
+    int blinkCounter = 0;
+
+    // start the subscriber
+    ros::Subscriber motionCommandSubscriber = nh.subscribe("cmd_vel", 1, motionCommandCallback);
+    ros::Subscriber lightStateSubscriber = nh.subscribe("autonomous_enabled", 1, autonomyCallback);
+
+    // listen for message until program termination
+    while(ros::ok() && !SHUTDOWN)
+    {
+        // issue motor commands if the status is OK
+        if(ros::Time::now().toSec() - LAST_COMMAND_TS.toSec() < ros::Duration(TIMEOUT_SECONDS).toSec())
+        {
+            sendBaseCommand(serialPort, MOTOR_1A_COMMAND, MOTOR_1B_COMMAND, MOTOR_2A_COMMAND, MOTOR_2B_COMMAND, SAFETY_LIGHT_STATE);
+        }
+        else
+        {
+            stopMotors(serialPort);
+            ROS_WARN("COMMAND TIMEOUT: motors stopped!");
+        }
+
+        // perform one iteration of message checking
+        ros::spinOnce();
+
+        // check for received serial data
+        pollSerialPort(serialPort);
+
+        // toggle the light state if necessary
+        if(!AUTONOMY_STATE)
+        {
+            SAFETY_LIGHT_STATE = 1;
+            blinkCounter = 0;
+        }
+        else
+        {
+            // reset blink counter if necessary
+            if(blinkCounter > SAFETY_LIGHT_CYCLE)
+            {
+                blinkCounter = 0;
+            }
+
+            // set the light to the appropriate state
+            if(blinkCounter < SAFETY_LIGHT_CYCLE / 2)
+            {
+                SAFETY_LIGHT_STATE = 1;
+            }
+            else if(blinkCounter < SAFETY_LIGHT_CYCLE)
+            {
+                SAFETY_LIGHT_STATE = 0;
+            }
+            blinkCounter++;
+        }
+
+        // sleep to maintain the loop rate
+        loop_rate.sleep();
+    }
+
+    // stop the motors
+    sendBaseCommand(serialPort, 90, 90, 90, 90, 0);
+
+    // close the serial port
+    closeSerialPort(serialPort);
+}
+
+void motionCommandCallback(const geometry_msgs::TwistStamped::ConstPtr& msg)
+{
+    // define the scaling parameters for the motor channels
+    const float linear_scaler = 20;
+    const float angular_scaler = 10;
+    const float servo_offset = 90;
+
+    // define the necessary variables
+    const float theta_1 = PI/4;
+    const float theta_2 = (3*PI)/4;
+    const float theta_3 = (5*PI)/4;
+    const float theta_4 = (7*PI)/4;
+    float v_1, v_2, v_3, v_4, v_x, v_y, w;
+
+    v_x = msg->twist.linear.x;
+    v_y = msg->twist.linear.y;
+    w = msg->twist.angular.z;
+
+    // compute the component velocities
+    v_1 = -sin(theta_1)*v_x + cos(theta_1)*v_y - w;
+    v_2 = -sin(theta_2)*v_x + cos(theta_2)*v_y - w;
+    v_3 = -sin(theta_3)*v_x + cos(theta_3)*v_y - w;
+    v_4 = -sin(theta_4)*v_x + cos(theta_4)*v_y - w;
+
+    // flip the velocities according to our platform configuration
+    v_1 = 0 - v_1;
+    v_2 = 0 - v_2;
+    v_3 = 0 - v_3;
+    v_4 = v_4;
+
+    // assign the motor commands to the appropriate channels
+    unsigned char m_a1 = (unsigned char) (floor(v_2 * linear_scaler + 0.5) + servo_offset);
+    unsigned char m_a2 = (unsigned char) (floor(v_3 * linear_scaler + 0.5) + servo_offset);
+    unsigned char m_b1 = (unsigned char) (floor(v_4 * linear_scaler + 0.5) + servo_offset);
+    unsigned char m_b2 = (unsigned char) (floor(v_1 * linear_scaler + 0.5) + servo_offset);
+
+    // condition the values
+    if(m_a1 < 0)
+        m_a1 = 0;
+    if(m_a1 > 180)
+        m_a1 = 180;
+    if(m_a2 < 0)
+        m_a2 = 0;
+    if(m_a2 > 180)
+        m_a2 = 180;
+    if(m_b1 < -0)
+        m_b1 = 0;
+    if(m_b1 > 180)
+        m_b1 = 180;
+    if(m_b2 < 0)
+        m_b2 = 0;
+    if(m_b2 > 180)
+        m_b2 = 180;
+
+    ROS_INFO("RECEIVED_ROS: cmd_vel: linear_x linear_y, angular_z [%f, %f, %f] -> velocities [%f, %f, %f, %f], wheels [%u, %u, %u, %u]", msg->twist.linear.x, msg->twist.linear.y, msg->twist.angular.z, v_1, v_2, v_3, v_4, m_a1, m_a2, m_b1, m_b2);
+
+    // update the commands
+    MOTOR_1A_COMMAND = m_a1;
+    MOTOR_1B_COMMAND = m_a2;
+    MOTOR_2A_COMMAND = m_b1;
+    MOTOR_2B_COMMAND = m_b2;
+    LAST_COMMAND_TS = ros::Time::now();
+}
+
+int openSerialPort(char* portName)
+{
+    // store the file descriptor for the serial port
+    int fd;
+
+    // attempt to open the port
+    fd = open(portName, O_RDWR | O_NOCTTY | O_NDELAY);
+
+    // return -1 if we are unable to open the port
+    if(fd == -1)
+    {
+        return -1;
+    }
+    else
+    {
+        // clear any existing file descriptor flags
+        fcntl(fd, F_SETFL, 0);
+
+        // create a structure to store the port settings
+        struct termios port_settings;
+
+        // set the baud rates
+        cfsetispeed(&port_settings, B9600);
+        cfsetospeed(&port_settings, B9600);
+
+        // set no parity, stop bits, data bits
+        port_settings.c_cflag &= ~PARENB;
+        port_settings.c_cflag &= ~CSTOPB;
+        port_settings.c_cflag &= ~CSIZE;
+        port_settings.c_cflag |= CS8;
+
+        // set the port to use all 8 bits
+        port_settings.c_iflag &= ~ISTRIP;
+
+        // apply the settings to the port
+        tcsetattr(fd, TCSANOW, &port_settings);
+
+        // set the non blocking functionality
+        fcntl(fd, F_SETFL, O_NONBLOCK);
+
+        // return the file descriptor
+        return(fd);
+    }
+}
+
+/***********************************************************************************************************************
+void closeSerialPort(int serialPort)
+close the given serial port
+***********************************************************************************************************************/
+void closeSerialPort(int serialPort)
+{
+    tcflush(serialPort, TCIOFLUSH);
+    close(serialPort);
+}
+
+/***********************************************************************************************************************
+void writeSerialBytes(int serialPort, unsigned char* data, int numBytes)
+write the byte data to the serial port
+***********************************************************************************************************************/
+void writeSerialBytes(int serialPort, unsigned char* data, int numBytes)
+{
+    int result = write(serialPort, data, numBytes);
+}
+
+/***********************************************************************************************************************
+void makeTeensyPacket(unsigned char* buffer, unsigned char m1a_val, unsigned char m1b_val, unsigned char m2a_val, unsigned char m2b_val, unsigned char light)
+create a base command packet from the given values, returning the result in buffer
+***********************************************************************************************************************/
+void makeTeensyPacket(unsigned char* buffer, unsigned char m1a_val, unsigned char m1b_val, unsigned char m2a_val, unsigned char m2b_val, unsigned char light)
+{
+    // initialize the packet
+    buffer[0] = SERIAL_PACKET_START_CHAR;
+    buffer[1] = SERIAL_PACKET_LENGTH;
+    buffer[2] = m1a_val;
+    buffer[3] = m1b_val;
+    buffer[4] = m2a_val;
+    buffer[5] = m2b_val;
+    buffer[6] = light;
+    buffer[7] = 0x00;
+
+    // compute the checksum
+    for(int i = 0; i < SERIAL_PACKET_LENGTH - 1; i++)
+    {
+        buffer[SERIAL_PACKET_LENGTH - 1] = buffer[SERIAL_PACKET_LENGTH - 1] ^ buffer[i];
+    }
+}
+
+/***********************************************************************************************************************
+void sendBaseCommand(int serialPort, unsigned char m1a_val, unsigned char m1b_val, unsigned char m2a_val, unsigned char m2b_val, unsigned char light)
+create a packet from the given parameters and send to the serial port
+***********************************************************************************************************************/
+void sendBaseCommand(int serialPort, unsigned char m1a_val, unsigned char m1b_val, unsigned char m2a_val, unsigned char m2b_val, unsigned char light)
+{
+    // create the outgoing packet buffer
+    unsigned char packet[SERIAL_PACKET_LENGTH];
+
+    // create the packet
+    makeTeensyPacket(packet, m1a_val, m1b_val, m2a_val, m2b_val, light);
+
+    // write the packet
+    writeSerialBytes(serialPort, packet, SERIAL_PACKET_LENGTH);
+}
+
+/***********************************************************************************************************************
+void pollSerialPort(int serialPort)
+processed received data from the serial port
+***********************************************************************************************************************/
+void pollSerialPort(int serialPort)
+{
+    const int bufferSize = 100;
+    static unsigned char buff[bufferSize];
+    int n;
+
+    // attempt to read bytes from the port
+    n = read(serialPort, buff, bufferSize);
+
+    // print any received bytes to terminal
+    if(n > 0)
+    {
+        ROS_INFO("RECEIVED TTY RESPONSE...");
+    }
+}
+
+/***********************************************************************************************************************
+void shutdownHandler(int s)
+send a stop motor command to the controller
+***********************************************************************************************************************/
+void shutdownHandler(int s)
+{
+    ROS_INFO("SHUTDOWN COMMAND DETECTED...");
+    SHUTDOWN = true;
+}
+
+
+
+
+
