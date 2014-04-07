@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop
+CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build
+CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Utility rule file for rosbuild_clean-test-results.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build
 include CMakeFiles/rosbuild_clean-test-results.dir/progress.make
 
 CMakeFiles/rosbuild_clean-test-results:
-	if ! rm -rf /home/cody/.ros/test_results/pr2_teleop; then echo WARNING:\ failed\ to\ remove\ test-results\ directory ; fi
+	if ! rm -rf /home/cody/.ros/test_results/SpiderTeleop_pkg; then echo WARNING:\ failed\ to\ remove\ test-results\ directory ; fi
 
 rosbuild_clean-test-results: CMakeFiles/rosbuild_clean-test-results
 rosbuild_clean-test-results: CMakeFiles/rosbuild_clean-test-results.dir/build.make
@@ -58,6 +58,6 @@ CMakeFiles/rosbuild_clean-test-results.dir/clean:
 .PHONY : CMakeFiles/rosbuild_clean-test-results.dir/clean
 
 CMakeFiles/rosbuild_clean-test-results.dir/depend:
-	cd /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build/CMakeFiles/rosbuild_clean-test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/rosbuild_clean-test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rosbuild_clean-test-results.dir/depend
 

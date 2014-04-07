@@ -15,6 +15,7 @@ REVISION HISTORY:
 **********************************************************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>														// for abs
 #include <signal.h>														// for ctrl c exit
 #include "ros/ros.h"
 #include "std_msgs/Char.h"
@@ -34,7 +35,7 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& msg);
 void LegStatusCallback(const std_msgs::Char::ConstPtr& msg);
 void shutdownHandler(int s);
 short int WaitForDone(void);
-short int PlanStrideMove(short int Leg, float X, float Y, float Z);
+short int PlanStrideMoveXY(short int Leg, float X, float Y, float Z);
 
 using namespace SpiderRobotConstants;									// stores leg common leg positions
 
@@ -49,11 +50,13 @@ short int LegGroupTurn = 0;											// leg group 0 or 1's turn to move
 float Zposition = 0;													// will eventually modify standing height
 float Xstride = 0;														// walking stride in X, Y, Z, and rotation theta
 float Ystride = 0;														
-float Zstride = .04;													// amount legs left up while walking, default 1cm
+float Zstride = .015;													// amount legs left up while walking, default 1.5 cm
 float Tstride = 0;														
 float TwistFactor = 100;												// convert between raw twist and meter
 short int LoopHz = 5;													// rate for loops
 int PublishDelay = 300*1000;											// delay after publishing
+int HighSpeed = 0;														// Speed for fast movements
+int LowSpeed = 0;														// Speed for slow movements
 
 float FPG0L0_C[3];														// holds foot plant points in 
 float FPG0L1_C[3];														
@@ -120,7 +123,7 @@ int main(int argc, char **argv)
 			usleep(PublishDelay*10);
 			CurrentlyMoving = true;										// change status to moving as command was given
 			STATE = 1;
-			PosArray.speed = 300;
+			PosArray.speed = 500;
 			break;
 	  	  }
 		  case 1:
@@ -237,21 +240,27 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	 // printf("Twist Status feedback: %f", twist->linear.x);
 	ROS_INFO("Twist Status feedback: %f", twist->linear.x);
 	// check for minimal value
+	HighSpeed = 0;
+	LowSpeed = 0;
 	bool xyMove = false;												// checks for xy move to cancel theta move
-	if( twist->linear.x <= -1 ||  1 <= twist->linear.x )				// check minmal value
+	if( twist->linear.x <= -.1 ||  .1 <= twist->linear.x )				// check minmal value
 	{
-		if( -100 <= twist->linear.x || twist->linear.x  <= 1000)		// check maximium value
+		if( -3.5 <= twist->linear.x || twist->linear.x  <= 3.5 )		// check maximium value
 		{
 			Xstride = twist->linear.x/TwistFactor;
 			printf("Xstride: %f\n", Xstride);
+			HighSpeed = abs( (int)(100.0*twist->linear.x) );
+			LowSpeed = abs( (int)(50.0*twist->linear.x) );
 			xyMove = true;
 		}	
 	}
-	if( twist->linear.y <=  -1 ||  1 <= twist->linear.y )				// check minmal value
+	if( twist->linear.y <=  -.1 ||  .1 <= twist->linear.y )				// check minmal value
 	{
-		if( -100 <= twist->linear.y || twist->linear.y  <= 1000)		// check maximium value
+		if( -3.5 <= twist->linear.y || twist->linear.y  <= 3.5 )		// check maximium value
 		{
 			Ystride = twist->linear.y/TwistFactor;
+			HighSpeed += abs( (int)(100*twist->linear.y) );
+			LowSpeed += abs( (int)(50*twist->linear.y) );
 			xyMove = true;
 		}
 	}
@@ -267,27 +276,40 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		if(LegGroupTurn) //move group 1
 		{
 			//~ // move group 1 up and forward
-			res = PlanStrideMove(3, Xstride, Ystride, Zstride);			// 3 = G1L0
-			res = PlanStrideMove(4, Xstride, Ystride, Zstride);			// 4 = G1L1
-			res = PlanStrideMove(5, Xstride, Ystride, Zstride);			// 5 = G1L2
+			res = PlanStrideMoveXY(3, Xstride, Ystride, Zstride);		// 3 = G1L0
+			res = PlanStrideMoveXY(4, Xstride, Ystride, Zstride);		// 4 = G1L1
+			res = PlanStrideMoveXY(5, Xstride, Ystride, Zstride);		// 5 = G1L2
+			PosArray.speed = HighSpeed;
 			WaitForDone();												// wait for legs to reach position
 			SpiderRobotMain_pub.publish(PosArray);						// publish command to lift legs up
 			CurrentlyMoving = true;
 			usleep(PublishDelay);
 			
-			//~ // move group 0 back
-			res = PlanStrideMove(0, (-1)*Xstride, (-1)*Ystride, 0);		// 0 = G0L0
-			res = PlanStrideMove(1, (-1)*Xstride, (-1)*Ystride, 0);		// 1 = G0L1
-			res = PlanStrideMove(2, (-1)*Xstride, (-1)*Ystride, 0);		// 2 = G0L2
+			//~ // move group 0 home
+			res = PlanStrideMoveXY(0, 0, 0, 0);							// 0 = G0L0
+			res = PlanStrideMoveXY(1, 0, 0, 0);							// 1 = G0L1
+			res = PlanStrideMoveXY(2, 0, 0, 0);							// 2 = G0L2
+			PosArray.speed = LowSpeed;
 			WaitForDone();												// wait for legs to reach position
+			SpiderRobotMain_pub.publish(PosArray);
+			CurrentlyMoving = true;
+			usleep(2*PublishDelay);
+			
+			//~ // move group 0 back
+			res = PlanStrideMoveXY(0, (-1)*Xstride, (-1)*Ystride, 0);	// 0 = G0L0
+			res = PlanStrideMoveXY(1, (-1)*Xstride, (-1)*Ystride, 0);	// 1 = G0L1
+			res = PlanStrideMoveXY(2, (-1)*Xstride, (-1)*Ystride, 0);	// 2 = G0L2
+			PosArray.speed = LowSpeed;
+			// dont wait												// wait for legs to reach position
 			SpiderRobotMain_pub.publish(PosArray);
 			CurrentlyMoving = true;
 			usleep(PublishDelay);
 			
 			//~ // move group 1 down
-			res = PlanStrideMove(3, Xstride, Ystride, 0);				// 3 = G1L0
-			res = PlanStrideMove(4, Xstride, Ystride, 0);				// 4 = G1L1
-			res = PlanStrideMove(5, Xstride, Ystride, 0);				// 5 = G1L2
+			res = PlanStrideMoveXY(3, Xstride, Ystride, 0);				// 3 = G1L0
+			res = PlanStrideMoveXY(4, Xstride, Ystride, 0);				// 4 = G1L1
+			res = PlanStrideMoveXY(5, Xstride, Ystride, 0);				// 5 = G1L2
+			PosArray.speed = HighSpeed;
 			WaitForDone();												// wait for legs to reach position
 			SpiderRobotMain_pub.publish(PosArray);						// publish command to lift legs up
 			usleep(PublishDelay);
@@ -297,27 +319,40 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		else //move group 0
 		{
 			//~ // move group 0 up and forward
-			res = PlanStrideMove(0, Xstride, Ystride, Zstride);			// 0 = G0L0
-			res = PlanStrideMove(1, Xstride, Ystride, Zstride);			// 1 = G0L1
-			res = PlanStrideMove(2, Xstride, Ystride, Zstride);			// 2 = G0L2
+			res = PlanStrideMoveXY(0, Xstride, Ystride, Zstride);		// 0 = G0L0
+			res = PlanStrideMoveXY(1, Xstride, Ystride, Zstride);		// 1 = G0L1
+			res = PlanStrideMoveXY(2, Xstride, Ystride, Zstride);		// 2 = G0L2
+			PosArray.speed = HighSpeed;
 			WaitForDone();												// wait for legs to reach position
 			SpiderRobotMain_pub.publish(PosArray);						// publish command to lift legs up
 			CurrentlyMoving = true;
 			usleep(PublishDelay);
 			
-			//~ // move group 1 back
-			res = PlanStrideMove(3, (-1)*Xstride, (-1)*Ystride, 0);		// 3 = G1L0
-			res = PlanStrideMove(4, (-1)*Xstride, (-1)*Ystride, 0);		// 4 = G1L1
-			res = PlanStrideMove(5, (-1)*Xstride, (-1)*Ystride, 0);		// 5 = G1L2
+			//~ // move group 1 home
+			res = PlanStrideMoveXY(3, 0, 0, 0);							// 3 = G1L0
+			res = PlanStrideMoveXY(4, 0, 0, 0);							// 4 = G1L1
+			res = PlanStrideMoveXY(5, 0, 0, 0);							// 5 = G1L2
+			PosArray.speed = LowSpeed;
 			WaitForDone();												// wait for legs to reach position
+			SpiderRobotMain_pub.publish(PosArray);
+			CurrentlyMoving = true;
+			usleep(2*PublishDelay);
+			
+			//~ // move group 1 back
+			res = PlanStrideMoveXY(3, (-1)*Xstride, (-1)*Ystride, 0);	// 3 = G1L0
+			res = PlanStrideMoveXY(4, (-1)*Xstride, (-1)*Ystride, 0);	// 4 = G1L1
+			res = PlanStrideMoveXY(5, (-1)*Xstride, (-1)*Ystride, 0);	// 5 = G1L2
+			PosArray.speed = LowSpeed;
+			// dont wait												// wait for legs to reach position
 			SpiderRobotMain_pub.publish(PosArray);
 			CurrentlyMoving = true;
 			usleep(PublishDelay);
 			
 			//~ // move group 1 down
-			res = PlanStrideMove(0, Xstride, Ystride, 0);				// 0 = G0L0
-			res = PlanStrideMove(1, Xstride, Ystride, 0);				// 1 = G0L1
-			res = PlanStrideMove(2, Xstride, Ystride, 0);				// 2 = G0L2
+			res = PlanStrideMoveXY(0, Xstride, Ystride, 0);				// 0 = G0L0
+			res = PlanStrideMoveXY(1, Xstride, Ystride, 0);				// 1 = G0L1
+			res = PlanStrideMoveXY(2, Xstride, Ystride, 0);				// 2 = G0L2
+			PosArray.speed = HighSpeed;
 			WaitForDone();												// wait for legs to reach position
 			SpiderRobotMain_pub.publish(PosArray);						// publish command to lift legs up
 			usleep(PublishDelay);
@@ -382,7 +417,7 @@ void shutdownHandler(int s)
 	SHUTDOWN = true;
 }
 
-short int PlanStrideMove(short int Leg, float X, float Y, float Z)
+short int PlanStrideMoveXY(short int Leg, float X, float Y, float Z)
 {
 	int res = 1;														// result
 	switch (Leg)
@@ -391,7 +426,7 @@ short int PlanStrideMove(short int Leg, float X, float Y, float Z)
 	  {
 		FPG0L0_C[0] = G0L0_Home_Car_Rob[0] + X;							// move group to stride position
 		FPG0L0_C[1] = G0L0_Home_Car_Rob[1] + Y;
-		FPG0L0_C[2] = G0L0_Home_Car_Rob[2] + Z;							// move up or back down (default 1 cm)
+		FPG0L0_C[2] = G0L0_Home_Car_Rob[2] + Z;							// move up or back down (default 2 cm)
 		TransferFrame(0, Leg, FPG0L0_C);								// move points from robot frame to leg frame 0
 		res = InverseKinematics(FPG0L0_C, FPG0L0_A);					// find IK, need to check res more inthe future
 		if(~res)
@@ -407,7 +442,7 @@ short int PlanStrideMove(short int Leg, float X, float Y, float Z)
 		//~ MultiplyMat(H_B_G0L1, HPointB, HPointL);	
 		FPG0L1_C[0] = G0L1_Home_Car_Rob[0] + X;							// move group to stride position
 		FPG0L1_C[1] = G0L1_Home_Car_Rob[1] + Y;
-		FPG0L1_C[2] = G0L1_Home_Car_Rob[2] + Z;							// move up or back down (default 1 cm)
+		FPG0L1_C[2] = G0L1_Home_Car_Rob[2] + Z;							// move up or back down (default 2 cm)
 		TransferFrame(0, Leg, FPG0L1_C);								// move points from robot frame to leg frame 0
 		res = InverseKinematics(FPG0L1_C, FPG0L1_A);					// find IK, need to check res more inthe future
 		if(~res)
@@ -423,7 +458,7 @@ short int PlanStrideMove(short int Leg, float X, float Y, float Z)
 		//~ MultiplyMat(H_B_G0L2, HPointB, HPointL);		
 		FPG0L2_C[0] = G0L2_Home_Car_Rob[0] + X;							// move group to stride position
 		FPG0L2_C[1] = G0L2_Home_Car_Rob[1] + Y;
-		FPG0L2_C[2] = G0L2_Home_Car_Rob[2] + Z;							// move up or back down (default 1 cm)
+		FPG0L2_C[2] = G0L2_Home_Car_Rob[2] + Z;							// move up or back down (default 2 cm)
 		TransferFrame(0, Leg, FPG0L2_C);								// move points from robot frame to leg frame 0
 		res = InverseKinematics(FPG0L2_C, FPG0L2_A);					// find IK, need to check res more inthe future
 		if(~res)
@@ -439,7 +474,7 @@ short int PlanStrideMove(short int Leg, float X, float Y, float Z)
 		//~ MultiplyMat(H_B_G1L0, HPointB, HPointL);
 		FPG1L0_C[0] = G1L0_Home_Car_Rob[0] + X;							// move group to stride position
 		FPG1L0_C[1] = G1L0_Home_Car_Rob[1] + Y;
-		FPG1L0_C[2] = G1L0_Home_Car_Rob[2] + Z;							// move up or back down (default 1 cm)
+		FPG1L0_C[2] = G1L0_Home_Car_Rob[2] + Z;							// move up or back down (default 2 cm)
 		TransferFrame(0, Leg, FPG1L0_C);								// move points from robot frame to leg frame 0
 		res = InverseKinematics(FPG1L0_C, FPG1L0_A);					// find IK, need to check res more inthe future
 		if(~res)
@@ -454,7 +489,7 @@ short int PlanStrideMove(short int Leg, float X, float Y, float Z)
 	  {	
 		FPG1L1_C[0] = G1L1_Home_Car_Rob[0] + X;							// move group to stride position
 		FPG1L1_C[1] = G1L1_Home_Car_Rob[1] + Y;
-		FPG1L1_C[2] = G1L1_Home_Car_Rob[2] + Z;							// move up or back down (default 1 cm)
+		FPG1L1_C[2] = G1L1_Home_Car_Rob[2] + Z;							// move up or back down (default 2 cm)
 		TransferFrame(0, Leg, FPG1L1_C);								// move points from robot frame to leg frame 0
 		res = InverseKinematics(FPG1L1_C, FPG1L1_A);					// find IK, need to check res more inthe future
 		if(~res)
@@ -469,7 +504,7 @@ short int PlanStrideMove(short int Leg, float X, float Y, float Z)
 	  {
 		FPG1L2_C[0] = G1L2_Home_Car_Rob[0] + X;							// move group to stride position
 		FPG1L2_C[1] = G1L2_Home_Car_Rob[1] + Y;
-		FPG1L2_C[2] = G1L2_Home_Car_Rob[2] + Z;							// move up or back down (default 1 cm)
+		FPG1L2_C[2] = G1L2_Home_Car_Rob[2] + Z;							// move up or back down (default 2 cm)
 		TransferFrame(0, Leg, FPG1L2_C);								// move points from robot frame to leg frame 0
 		res = InverseKinematics(FPG1L2_C, FPG1L2_A);					// find IK, need to check res more inthe future
 		if(~res)

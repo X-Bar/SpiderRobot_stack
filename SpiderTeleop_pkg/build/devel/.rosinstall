@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build/devel/setup.sh
+    local-name: /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/devel/setup.sh

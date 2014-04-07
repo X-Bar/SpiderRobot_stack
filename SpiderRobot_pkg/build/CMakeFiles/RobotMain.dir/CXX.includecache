@@ -40,11 +40,11 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/ros/assert.h
 
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp
 ros/ros.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/ros/ros.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/ros/ros.h
 std_msgs/Char.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/std_msgs/Char.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/std_msgs/Char.h
 iostream
 -
 stdio.h
@@ -66,9 +66,9 @@ math.h
 SpiderRobot_pkg/MyArray.h
 -
 SpiderRobot_pkg/SpiderConstants.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderConstants.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderConstants.h
 SpiderRobot_pkg/SpiderFunctions.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderFunctions.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderFunctions.h
 
 /opt/ros/groovy/include/XmlRpcDecl.h
 ros/macros.h

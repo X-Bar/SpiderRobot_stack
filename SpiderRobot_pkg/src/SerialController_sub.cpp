@@ -88,15 +88,15 @@ int main(int argc, char** argv)
 	serialPort = openSerialPort(portName);
 
 	// check to see if we connected successfully
-	if(serialPort == -1)
-	{
-		printf("unable to open serial port %s \n", portName);
-		return(0);
-	}
-	else
-	{
-		printf("serial port opened: %s \n", portName);
-	}
+	//~ if(serialPort == -1)
+	//~ {
+		//~ printf("unable to open serial port %s \n", portName);
+		//~ return(0);
+	//~ }
+	//~ else
+	//~ {
+		//~ printf("serial port opened: %s \n", portName);
+	//~ }
 
 	// set up the shutdown handler
 	struct sigaction sigIntHandler;
@@ -243,7 +243,6 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 
 void SingleCommandCallback(const SpiderRobot_pkg::My2Num::ConstPtr& msg)
 {
-
 	char buffer[20] = {'\0'}, temp[10] = {'\0'};				// buffer for serial commands, and temp buffer
 	int i, n, uSecPos, result;
 	//~ printf("\nRecived single channel data...\n");
@@ -288,17 +287,17 @@ void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1)
 			{
 				if( i == 0 || i == 3 || i == 6 || i == 9 || i == 12 || i == 15 )	// first joint
 				{
-					if(Pos[i] < 1050)
+					if(Pos[i] < 700)
 					{
 						printf("angle %d was %d\n", i, Pos[i]);
-						Pos[i] = 1050;
-						printf("angle %d changed\n", i);
+						Pos[i] = 700;
+						printf("angle %d changed to %d\n", i, Pos[i]);
 					}
-					else if(Pos[i] > 1950)
+					else if(Pos[i] > 2200)
 					{
 						printf("angle %d was %d\n", i, Pos[i]);
-						Pos[i] = 1950;
-						printf("angle %d changed\n", i);
+						Pos[i] = 2200;
+						printf("angle %d changed to %d\n", i, Pos[i]);
 					}
 				}
 				if( i == 1 || i == 4 || i == 7 || i == 10 || i == 13 || i == 16 )	// second joint
@@ -306,14 +305,14 @@ void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1)
 					if(Pos[i] < 1100)
 					{
 						printf("angle %d was %d\n", i, Pos[i]);
-						Pos[i] = 1250;
-						printf("angle %d changed\n", i);
+						Pos[i] = 1100;
+						printf("angle %d changed to %d\n", i, Pos[i]);
 					}
 					else if(Pos[i] > 2250)
 					{
 						printf("angle %d was %d\n", i, Pos[i]);
 						Pos[i] = 2250;
-						printf("angle %d changed\n", i);
+						printf("angle %d changed to %d\n", i, Pos[i]);
 					}
 				}
 				if( i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 )	// third joint
@@ -322,13 +321,13 @@ void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1)
 					{
 						printf("angle %d was %d\n", i, Pos[i]);
 						Pos[i] = 600;
-						printf("angle %d changed\n", i);
+						printf("angle %d changed to %d\n", i, Pos[i]);
 					}
-					else if(Pos[i] > 1850)
+					else if(Pos[i] > 1800)
 					{
 						printf("angle %d was %d\n", i, Pos[i]);
-						Pos[i] = 1750;
-						printf("angle %d changed\n", i);
+						Pos[i] = 1800;
+						printf("angle %d changed to %d\n", i, Pos[i]);
 					}
 				}
 			}// end forloop
@@ -338,32 +337,32 @@ void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1)
 		{
 			if( Cha == 0 || Cha == 3 || Cha == 6 || Cha == 9 || Cha == 12 || Cha == 15 )	// first joint
 			{
-				if(*Pos1 < 1050)
+				if(*Pos1 < 700)
 				{
 					printf("angle %d was %d\n", Cha, *Pos1);
-					*Pos1 = 1050;
-					printf("angle %d changed\n", Cha);
+					*Pos1 = 700;
+					printf("angle %d changed to %d\n", Cha, *Pos1);
 				}
-				else if(*Pos1 > 1950)
+				else if(*Pos1 > 2200)
 				{
 					printf("angle %d was %d\n", Cha, *Pos1);
-					*Pos1 = 1950;
-					printf("angle %d changed\n", Cha);
+					*Pos1 = 2200;
+					printf("angle %d changed to %d\n", Cha, *Pos1);
 				}
 			}
 			if( Cha == 1 || Cha == 4 || Cha == 7 || Cha == 10 || Cha == 13 || Cha == 16 )	// second joint
 			{
-				if(*Pos1 < 1250)
+				if(*Pos1 < 1100)
 				{
 					printf("angle %d was %d\n", Cha, *Pos1);
 					*Pos1 = 1100;
-					printf("angle %d changed\n", Cha);
+					printf("angle %d changed to %d\n", Cha, *Pos1);
 				}
 				else if(*Pos1 > 2250)
 				{
 					printf("angle %d was %d\n", Cha, *Pos1);
 					*Pos1 = 2250;
-					printf("angle %d changed\n", Cha);
+					printf("angle %d changed to %d\n", Cha, *Pos1);
 				}
 			}
 			if( Cha == 2 || Cha == 5 || Cha == 8 || Cha == 11 || Cha == 14 || Cha == 17 )	// third joint
@@ -372,13 +371,13 @@ void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1)
 				{
 					printf("angle %d was %d\n", Cha, *Pos1);
 					*Pos1 = 600;
-					printf("angle %d changed\n", Cha);
+					printf("angle %d changed to %d\n", Cha, *Pos1);
 				}
-				else if(*Pos1 > 1850)
+				else if(*Pos1 > 1800)
 				{
 					printf("angle %d was %d\n", Cha, *Pos1);
-					*Pos1 = 1750;
-					printf("angle %d changed\n", Cha);
+					*Pos1 = 1800;
+					printf("angle %d changed to %d\n", Cha, *Pos1);
 				}
 			}
 			break;

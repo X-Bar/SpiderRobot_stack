@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/teleop_pr2.cpp
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp
 cstdlib
 -
 cstdio
@@ -18,23 +18,23 @@ math.h
 fcntl.h
 -
 ros/ros.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/ros/ros.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/ros/ros.h
 sensor_msgs/Joy.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/sensor_msgs/Joy.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/sensor_msgs/Joy.h
 geometry_msgs/Twist.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/geometry_msgs/Twist.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/geometry_msgs/Twist.h
 sensor_msgs/JointState.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/sensor_msgs/JointState.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/sensor_msgs/JointState.h
 trajectory_msgs/JointTrajectory.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/trajectory_msgs/JointTrajectory.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/trajectory_msgs/JointTrajectory.h
 pr2_controllers_msgs/JointTrajectoryControllerState.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/pr2_controllers_msgs/JointTrajectoryControllerState.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/pr2_controllers_msgs/JointTrajectoryControllerState.h
 topic_tools/MuxSelect.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/topic_tools/MuxSelect.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/topic_tools/MuxSelect.h
 std_msgs/String.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/std_msgs/String.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/std_msgs/String.h
 std_msgs/Float64.h
-/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/src/std_msgs/Float64.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/std_msgs/Float64.h
 
 /opt/ros/groovy/include/XmlRpcDecl.h
 ros/macros.h

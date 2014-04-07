@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg
+CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build
+CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
 
 # Utility rule file for ROSBUILD_genmsg_cpp.
 
@@ -74,9 +74,9 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/class_loader/package.xml
 ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/pluginlib/package.xml
 ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h"
-	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/msg/My2Num.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/My2Num.msg
 
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: ../msg/MyChar.msg
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
@@ -106,9 +106,9 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/class_loader/package.xml
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/pluginlib/package.xml
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h"
-	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/msg/MyChar.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyChar.msg
 
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: ../msg/MyArray.msg
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
@@ -138,9 +138,9 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/class_loader/package.xml
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/pluginlib/package.xml
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h"
-	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/msg/MyArray.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyArray.msg
 
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp
 ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h
@@ -158,6 +158,6 @@ CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend:
-	cd /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend
 

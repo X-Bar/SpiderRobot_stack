@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg
+CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build
+CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
 
 # Utility rule file for ROSBUILD_genmsg_lisp.
 
@@ -80,9 +80,9 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_MyArray.lisp
 ../msg_gen/lisp/My2Num.lisp: /opt/ros/groovy/share/class_loader/package.xml
 ../msg_gen/lisp/My2Num.lisp: /opt/ros/groovy/share/pluginlib/package.xml
 ../msg_gen/lisp/My2Num.lisp: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/My2Num.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_My2Num.lisp"
-	/opt/ros/groovy/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/msg/My2Num.msg
+	/opt/ros/groovy/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/My2Num.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/My2Num.lisp
 
@@ -116,9 +116,9 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_MyArray.lisp
 ../msg_gen/lisp/MyChar.lisp: /opt/ros/groovy/share/class_loader/package.xml
 ../msg_gen/lisp/MyChar.lisp: /opt/ros/groovy/share/pluginlib/package.xml
 ../msg_gen/lisp/MyChar.lisp: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/MyChar.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_MyChar.lisp"
-	/opt/ros/groovy/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/msg/MyChar.msg
+	/opt/ros/groovy/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyChar.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/MyChar.lisp
 
@@ -152,9 +152,9 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_MyArray.lisp
 ../msg_gen/lisp/MyArray.lisp: /opt/ros/groovy/share/class_loader/package.xml
 ../msg_gen/lisp/MyArray.lisp: /opt/ros/groovy/share/pluginlib/package.xml
 ../msg_gen/lisp/MyArray.lisp: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/MyArray.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_MyArray.lisp"
-	/opt/ros/groovy/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/msg/MyArray.msg
+	/opt/ros/groovy/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyArray.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/MyArray.lisp
 
@@ -182,6 +182,6 @@ CMakeFiles/ROSBUILD_genmsg_lisp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_lisp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_lisp.dir/depend:
-	cd /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_lisp.dir/depend
 

@@ -3,14 +3,14 @@
 
 # Relative path conversion top directories.
 SET(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/gtest")
-SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build")
+SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build")
 
 # Force unix paths in dependencies.
 SET(CMAKE_FORCE_UNIX_PATHS 1)
 
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
-  "/home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/include"
+  "/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/include"
   "/usr/src/gtest/include"
   "/usr/src/gtest"
   )

@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop
+CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build
+CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Utility rule file for test-future.
 
@@ -57,6 +57,6 @@ CMakeFiles/test-future.dir/clean:
 .PHONY : CMakeFiles/test-future.dir/clean
 
 CMakeFiles/test-future.dir/depend:
-	cd /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build /home/cody/groovy_workspace/sandbox/pr2_apps/pr2_teleop/build/CMakeFiles/test-future.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/test-future.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-future.dir/depend
 

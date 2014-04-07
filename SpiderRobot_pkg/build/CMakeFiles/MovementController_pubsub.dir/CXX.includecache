@@ -40,27 +40,29 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/ros/assert.h
 
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/MovementController_pubsub.cpp
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/MovementController_pubsub.cpp
 stdio.h
+-
+stdlib.h
 -
 signal.h
 -
 ros/ros.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/ros/ros.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/ros/ros.h
 std_msgs/Char.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/std_msgs/Char.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/std_msgs/Char.h
 geometry_msgs/Twist.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/geometry_msgs/Twist.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/geometry_msgs/Twist.h
 SpiderRobot_pkg/MyArray.h
 -
 ros/callback_queue.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/ros/callback_queue.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/ros/callback_queue.h
 boost/thread.hpp
 -
 SpiderRobot_pkg/SpiderConstants.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderConstants.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderConstants.h
 SpiderRobot_pkg/SpiderFunctions.h
-/home/cody/groovy_workspace/GitHubRepos/X-Bar_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderFunctions.h
+/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SpiderRobot_pkg/SpiderFunctions.h
 
 /opt/ros/groovy/include/XmlRpcDecl.h
 ros/macros.h
