@@ -7,6 +7,7 @@ namespace SpiderRobotConstants
 	float L0 = .0381;													// link 0 length
 	float L1 = .05715;													// link 1 length
 	float L2 = .127;													// link 2 length
+	float RobotR = .1369;												// radius from robot center to leg base
 	float PI = 3.1416;
 	
 	// number of general positions, old version. Angle coordinates, leg frame 

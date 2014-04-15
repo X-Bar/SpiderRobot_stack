@@ -41,6 +41,8 @@ ros/assert.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/ros/assert.h
 
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/MovementController_pubsub.cpp
+math.h
+-
 stdio.h
 -
 stdlib.h
