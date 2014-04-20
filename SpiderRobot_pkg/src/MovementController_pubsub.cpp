@@ -446,8 +446,8 @@ short int MoveLegGroupT(short int LegGroup, float Tstride, float Zstride, int Sp
 	float R = pow( pow(Y, 2.0)+pow(X, 2.0) , .5);
 	
 	// calculate FP (foot points) in Robot frame for a single leg G1L1
-	X = -1*R*sin(Tstride);											// positive X
-	Y = R*cos(Tstride);
+	Y = -1*R*sin(Tstride);
+	X = R*cos(Tstride);
 	
 	float FP_C[3];
 	int FP_A[3];														// foot  point
