@@ -202,19 +202,6 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named bin/teleop_gripper
-
-# Build rule for target.
-bin/teleop_gripper: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bin/teleop_gripper
-.PHONY : bin/teleop_gripper
-
-# fast build rule for target.
-bin/teleop_gripper/fast:
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/build
-.PHONY : bin/teleop_gripper/fast
-
-#=============================================================================
 # Target rules for targets named bin/teleop_pr2
 
 # Build rule for target.
@@ -448,30 +435,6 @@ gtest_main/fast:
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-src/teleop_gripper.o: src/teleop_gripper.cpp.o
-.PHONY : src/teleop_gripper.o
-
-# target to build an object file
-src/teleop_gripper.cpp.o:
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.cpp.o
-.PHONY : src/teleop_gripper.cpp.o
-
-src/teleop_gripper.i: src/teleop_gripper.cpp.i
-.PHONY : src/teleop_gripper.i
-
-# target to preprocess a source file
-src/teleop_gripper.cpp.i:
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.cpp.i
-.PHONY : src/teleop_gripper.cpp.i
-
-src/teleop_gripper.s: src/teleop_gripper.cpp.s
-.PHONY : src/teleop_gripper.s
-
-# target to generate assembly for a file
-src/teleop_gripper.cpp.s:
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.cpp.s
-.PHONY : src/teleop_gripper.cpp.s
-
 src/teleop_pr2.o: src/teleop_pr2.cpp.o
 .PHONY : src/teleop_pr2.o
 
@@ -531,7 +494,6 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... bin/teleop_gripper"
 	@echo "... bin/teleop_pr2"
 	@echo "... bin/teleop_pr2_keyboard"
 	@echo "... clean_test_results"
@@ -556,9 +518,6 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... src/teleop_gripper.o"
-	@echo "... src/teleop_gripper.i"
-	@echo "... src/teleop_gripper.s"
 	@echo "... src/teleop_pr2.o"
 	@echo "... src/teleop_pr2.i"
 	@echo "... src/teleop_pr2.s"

@@ -205,48 +205,13 @@ clean: CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/bin/teleop_gripper.dir
-
-# All Build rule for target.
-CMakeFiles/bin/teleop_gripper.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/depend
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  1
-	@echo "Built target bin/teleop_gripper"
-.PHONY : CMakeFiles/bin/teleop_gripper.dir/all
-
-# Include target in all.
-all: CMakeFiles/bin/teleop_gripper.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/bin/teleop_gripper.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/bin/teleop_gripper.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles 0
-.PHONY : CMakeFiles/bin/teleop_gripper.dir/rule
-
-# Convenience name for target.
-bin/teleop_gripper: CMakeFiles/bin/teleop_gripper.dir/rule
-.PHONY : bin/teleop_gripper
-
-# clean rule for target.
-CMakeFiles/bin/teleop_gripper.dir/clean:
-	$(MAKE) -f CMakeFiles/bin/teleop_gripper.dir/build.make CMakeFiles/bin/teleop_gripper.dir/clean
-.PHONY : CMakeFiles/bin/teleop_gripper.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/bin/teleop_gripper.dir/clean
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/bin/teleop_pr2.dir
 
 # All Build rule for target.
 CMakeFiles/bin/teleop_pr2.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/depend
 	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  1
 	@echo "Built target bin/teleop_pr2"
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/all
 
@@ -281,7 +246,7 @@ clean: CMakeFiles/bin/teleop_pr2.dir/clean
 CMakeFiles/bin/teleop_pr2_keyboard.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/depend
 	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  2
 	@echo "Built target bin/teleop_pr2_keyboard"
 .PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/all
 
@@ -347,7 +312,7 @@ clean: CMakeFiles/clean_test_results.dir/clean
 CMakeFiles/doxygen.dir/all:
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/depend
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  3
 	@echo "Built target doxygen"
 .PHONY : CMakeFiles/doxygen.dir/all
 
@@ -768,7 +733,7 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  4
 	@echo "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
@@ -799,7 +764,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles  5
 	@echo "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 

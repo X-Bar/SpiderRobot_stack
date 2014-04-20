@@ -3,7 +3,6 @@
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/_catkin_empty_exported_target.dir
-/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_gripper.dir
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2.dir
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2_keyboard.dir
 /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/clean_test_results.dir
