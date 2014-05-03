@@ -6,7 +6,7 @@
     default="True" />
   <param
     name="robot_description"
-    textfile="$(find SpiderRobot)/robots/SpiderRobot.URDF" />
+    textfile="$(find SpiderRobot_pkg)/robots/SpiderRobot.URDF" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -22,5 +22,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find SpiderRobot)/urdf.rviz" />
+    args="-d $(find SpiderRobot_pkg)/urdf.rviz" />
 </launch>
