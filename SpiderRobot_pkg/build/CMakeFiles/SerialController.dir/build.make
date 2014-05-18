@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
+CMAKE_SOURCE_DIR = /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
+CMAKE_BINARY_DIR = /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SerialController.dir/depend.make
@@ -46,62 +46,52 @@ include CMakeFiles/SerialController.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SerialController.dir/flags.make
 
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: CMakeFiles/SerialController.dir/flags.make
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: ../src/SerialController_sub.cpp
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: ../manifest.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/rostime/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/genpy/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/catkin/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/rospack/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/roslib/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/rospy/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/bond/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/smclib/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/bondcpp/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/class_loader/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/pluginlib/package.xml
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o -c /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: CMakeFiles/SerialController.dir/flags.make
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: ../src/SerialController_sub.cpp
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: ../manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/roslang/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/rospy/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/roscpp/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/roslib/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/SerialController.dir/src/SerialController_sub.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/SerialController.dir/src/SerialController_sub.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/SerialController.dir/src/SerialController_sub.o -c /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp
 
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp > CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.i
+CMakeFiles/SerialController.dir/src/SerialController_sub.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SerialController.dir/src/SerialController_sub.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp > CMakeFiles/SerialController.dir/src/SerialController_sub.i
 
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp -o CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.s
+CMakeFiles/SerialController.dir/src/SerialController_sub.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SerialController.dir/src/SerialController_sub.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp -o CMakeFiles/SerialController.dir/src/SerialController_sub.s
 
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.requires:
-.PHONY : CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.requires
+CMakeFiles/SerialController.dir/src/SerialController_sub.o.requires:
+.PHONY : CMakeFiles/SerialController.dir/src/SerialController_sub.o.requires
 
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.provides: CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SerialController.dir/build.make CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.provides.build
-.PHONY : CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.provides
+CMakeFiles/SerialController.dir/src/SerialController_sub.o.provides: CMakeFiles/SerialController.dir/src/SerialController_sub.o.requires
+	$(MAKE) -f CMakeFiles/SerialController.dir/build.make CMakeFiles/SerialController.dir/src/SerialController_sub.o.provides.build
+.PHONY : CMakeFiles/SerialController.dir/src/SerialController_sub.o.provides
 
-CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.provides.build: CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o
+CMakeFiles/SerialController.dir/src/SerialController_sub.o.provides.build: CMakeFiles/SerialController.dir/src/SerialController_sub.o
 
 # Object files for target SerialController
 SerialController_OBJECTS = \
-"CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o"
+"CMakeFiles/SerialController.dir/src/SerialController_sub.o"
 
 # External object files for target SerialController
 SerialController_EXTERNAL_OBJECTS =
 
-../bin/SerialController: CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o
+../bin/SerialController: CMakeFiles/SerialController.dir/src/SerialController_sub.o
 ../bin/SerialController: CMakeFiles/SerialController.dir/build.make
 ../bin/SerialController: CMakeFiles/SerialController.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/SerialController"
@@ -111,7 +101,7 @@ SerialController_EXTERNAL_OBJECTS =
 CMakeFiles/SerialController.dir/build: ../bin/SerialController
 .PHONY : CMakeFiles/SerialController.dir/build
 
-CMakeFiles/SerialController.dir/requires: CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o.requires
+CMakeFiles/SerialController.dir/requires: CMakeFiles/SerialController.dir/src/SerialController_sub.o.requires
 .PHONY : CMakeFiles/SerialController.dir/requires
 
 CMakeFiles/SerialController.dir/clean:
@@ -119,6 +109,6 @@ CMakeFiles/SerialController.dir/clean:
 .PHONY : CMakeFiles/SerialController.dir/clean
 
 CMakeFiles/SerialController.dir/depend:
-	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/SerialController.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/sandbox/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/SerialController.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SerialController.dir/depend
 

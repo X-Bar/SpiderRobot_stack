@@ -11,6 +11,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/CMakeCCompiler.cmake"
   "CMakeFiles/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeSystem.cmake"
+<<<<<<< HEAD
   "catkin/catkin_generated/version/package.cmake"
   "catkin_generated/ordered_paths.cmake"
   "/opt/ros/groovy/share/catkin/cmake/../package.xml"
@@ -90,33 +91,48 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/groovy/share/rosunit/cmake/rosunit-extras.cmake"
   "/opt/ros/groovy/share/rosunit/cmake/rosunitConfig-version.cmake"
   "/opt/ros/groovy/share/rosunit/cmake/rosunitConfig.cmake"
+=======
+  "/opt/ros/fuerte/share/ros/core/rosbuild/ProcessorCount.cmake"
+  "/opt/ros/fuerte/share/ros/core/rosbuild/private.cmake"
+  "/opt/ros/fuerte/share/ros/core/rosbuild/public.cmake"
+  "/opt/ros/fuerte/share/ros/core/rosbuild/rosbuild.cmake"
+  "/opt/ros/fuerte/share/ros/core/rosbuild/rosconfig.cmake"
+  "/opt/ros/fuerte/share/ros/core/rosbuild/rostoolchain.cmake"
+  "/opt/ros/fuerte/share/roscpp/rosbuild/roscpp.cmake"
+  "/opt/ros/fuerte/share/roslang/cmake/roslang.cmake"
+  "/opt/ros/fuerte/share/roslisp/rosbuild/roslisp.cmake"
+  "/opt/ros/fuerte/share/rospy/rosbuild/rospy.cmake"
+>>>>>>> 0be981ff64e83e8e428eab2a7e350628b95c9350
   "/usr/share/cmake-2.8/Modules/AddFileDependencies.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCommonLanguageInclude.cmake"
+<<<<<<< HEAD
+=======
+  "/usr/share/cmake-2.8/Modules/CMakeDetermineCCompiler.cmake"
+  "/usr/share/cmake-2.8/Modules/CMakeDetermineCXXCompiler.cmake"
+  "/usr/share/cmake-2.8/Modules/CMakeDetermineCompilerABI.cmake"
+  "/usr/share/cmake-2.8/Modules/CMakeDetermineCompilerId.cmake"
+  "/usr/share/cmake-2.8/Modules/CMakeDetermineSystem.cmake"
+  "/usr/share/cmake-2.8/Modules/CMakeFindBinUtils.cmake"
+>>>>>>> 0be981ff64e83e8e428eab2a7e350628b95c9350
   "/usr/share/cmake-2.8/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeParseArguments.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CheckCXXCompilerFlag.cmake"
   "/usr/share/cmake-2.8/Modules/CheckCXXSourceCompiles.cmake"
   "/usr/share/cmake-2.8/Modules/CheckFunctionExists.cmake"
-  "/usr/share/cmake-2.8/Modules/CheckIncludeFiles.cmake"
-  "/usr/share/cmake-2.8/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU.cmake"
-  "/usr/share/cmake-2.8/Modules/FindGTest.cmake"
   "/usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-2.8/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-2.8/Modules/FindPythonInterp.cmake"
-  "/usr/share/cmake-2.8/Modules/FindThreads.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/UnixPaths.cmake"
-  "/usr/src/gtest/CMakeLists.txt"
-  "/usr/src/gtest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:
@@ -128,7 +144,6 @@ SET(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -141,10 +156,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ROSBUILD_gensrv_lisp.dir/DependInfo.cmake"
   "CMakeFiles/RobotMain.dir/DependInfo.cmake"
   "CMakeFiles/SerialController.dir/DependInfo.cmake"
-  "CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake"
-  "CMakeFiles/clean_test_results.dir/DependInfo.cmake"
-  "CMakeFiles/doxygen.dir/DependInfo.cmake"
-  "CMakeFiles/rosbuild_clean-test-results.dir/DependInfo.cmake"
+  "CMakeFiles/clean-test-results.dir/DependInfo.cmake"
   "CMakeFiles/rosbuild_precompile.dir/DependInfo.cmake"
   "CMakeFiles/rosbuild_premsgsrvgen.dir/DependInfo.cmake"
   "CMakeFiles/rospack_genmsg.dir/DependInfo.cmake"
@@ -152,12 +164,9 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/rospack_genmsg_libexe.dir/DependInfo.cmake"
   "CMakeFiles/rospack_gensrv.dir/DependInfo.cmake"
   "CMakeFiles/rospack_gensrv_all.dir/DependInfo.cmake"
-  "CMakeFiles/run_tests.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/test-future.dir/DependInfo.cmake"
   "CMakeFiles/test-results.dir/DependInfo.cmake"
   "CMakeFiles/test-results-run.dir/DependInfo.cmake"
   "CMakeFiles/tests.dir/DependInfo.cmake"
-  "gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
