@@ -158,8 +158,8 @@ CMAKE_SKIP_RPATH:BOOL=NO
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/opt/ros/groovy/share/ros/core/rosbuild/rostoolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=/opt/ros/groovy/share/ros/core/rosbuild/rostoolchain.cmake
 
 //If true, cmake will use relative paths in makefiles and projects.
 CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
@@ -215,8 +215,8 @@ PROJECTCONFIG:FILEPATH=PROJECTCONFIG-NOTFOUND
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
-//Python version
-PYTHON_VERSION_XDOTY:STRING=2.7
+//Specify specific Python version to use ('major.minor' or 'major')
+PYTHON_VERSION:STRING=
 
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
@@ -479,7 +479,7 @@ SpiderRobot_pkg_LIBRARY_DIRS:INTERNAL=/opt/ros/groovy/lib
 SpiderRobot_pkg_cached_manifest_list:INTERNAL=/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/manifest.xml;/opt/ros/groovy/share/cpp_common/package.xml;/opt/ros/groovy/share/rostime/package.xml;/opt/ros/groovy/share/roscpp_traits/package.xml;/opt/ros/groovy/share/roscpp_serialization/package.xml;/opt/ros/groovy/share/genmsg/package.xml;/opt/ros/groovy/share/genpy/package.xml;/opt/ros/groovy/share/message_runtime/package.xml;/opt/ros/groovy/share/std_msgs/package.xml;/opt/ros/groovy/share/rosgraph/package.xml;/opt/ros/groovy/share/rosgraph_msgs/package.xml;/opt/ros/groovy/share/catkin/package.xml;/opt/ros/groovy/share/rospack/package.xml;/opt/ros/groovy/share/roslib/package.xml;/opt/ros/groovy/share/rospy/package.xml;/opt/ros/groovy/share/rosconsole/package.xml;/opt/ros/groovy/share/xmlrpcpp/package.xml;/opt/ros/groovy/share/roscpp/package.xml;/opt/ros/groovy/share/bond/package.xml;/opt/ros/groovy/share/smclib/package.xml;/opt/ros/groovy/share/bondcpp/package.xml;/opt/ros/groovy/share/console_bridge/package.xml;/opt/ros/groovy/share/class_loader/package.xml;/opt/ros/groovy/share/pluginlib/package.xml;/opt/ros/groovy/share/nodelet/package.xml
 SpiderRobot_pkg_temp:INTERNAL=
 _rosbuild_EXPORTS:INTERNAL=
-_rosbuild_cached_flag_time:INTERNAL=1399077223.15
+_rosbuild_cached_flag_time:INTERNAL=1400456394.84
 _roslang_LANGS:INTERNAL=roslisp
 _rospack_deps_manifests_invoke_result:INTERNAL=/opt/ros/groovy/share/cpp_common/package.xml;/opt/ros/groovy/share/rostime/package.xml;/opt/ros/groovy/share/roscpp_traits/package.xml;/opt/ros/groovy/share/roscpp_serialization/package.xml;/opt/ros/groovy/share/genmsg/package.xml;/opt/ros/groovy/share/genpy/package.xml;/opt/ros/groovy/share/message_runtime/package.xml;/opt/ros/groovy/share/std_msgs/package.xml;/opt/ros/groovy/share/rosgraph/package.xml;/opt/ros/groovy/share/rosgraph_msgs/package.xml;/opt/ros/groovy/share/catkin/package.xml;/opt/ros/groovy/share/rospack/package.xml;/opt/ros/groovy/share/roslib/package.xml;/opt/ros/groovy/share/rospy/package.xml;/opt/ros/groovy/share/rosconsole/package.xml;/opt/ros/groovy/share/xmlrpcpp/package.xml;/opt/ros/groovy/share/roscpp/package.xml;/opt/ros/groovy/share/bond/package.xml;/opt/ros/groovy/share/smclib/package.xml;/opt/ros/groovy/share/bondcpp/package.xml;/opt/ros/groovy/share/console_bridge/package.xml;/opt/ros/groovy/share/class_loader/package.xml;/opt/ros/groovy/share/pluginlib/package.xml;/opt/ros/groovy/share/nodelet/package.xml
 _rospack_msgsrv_gen_invoke_result:INTERNAL=
