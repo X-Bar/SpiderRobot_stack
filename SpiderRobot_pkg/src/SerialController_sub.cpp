@@ -78,7 +78,6 @@ int main(int argc, char** argv)
 		return 0;
 	}
 	*/
-
 	char bufferS[30] = {'\0'};											// buffer for send recieve data
 	int n = 0, i;														// stores result from serial write/read, counter i
 	std_msgs::Char MotorResponse;										// To publish for motor check
@@ -232,7 +231,7 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 			break;
 		}
 		
-		case 1:
+		case 1: // Update all joint commands via time
 		{
 			// char bufferR[300];
 			char temp[10] = {'\0'};										// buffer for serial commands, and temp buffer
@@ -269,7 +268,7 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 				strcat(bufferR, temp);									// keep appending commands
 				memset(temp, '\0', sizeof(temp));						// clear temp
 			}	
-			if(msg->speed > 0 && 1000 > msg->speed)
+			if(msg->speed > 5.0 && 50000 > msg->speed)
 			{
 				sprintf(temp, "T%d", msg->speed);						// add time to array if it exists (mili sec)
 			}

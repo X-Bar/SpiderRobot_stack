@@ -197,7 +197,6 @@ int main(int argc, char **argv)
 			break; break;												// exit
 		  }
 		}// end switch(STATE)
-		//~ 
 		usleep(PublishDelay);
 		loop_rate.sleep();
 		
