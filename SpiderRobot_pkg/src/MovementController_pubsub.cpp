@@ -53,9 +53,10 @@ short int LegGroupTurn = 0;											// leg group 0 or 1's turn to move
 float Zposition = 0;													// will eventually modify standing height
 float Xstride = 0;														// walking stride in X, Y, Z, and rotation theta
 float Ystride = 0;														
-float Zstride = .015;													// amount legs left up while walking, default 1.5 cm
+float Zstride = .02;													// amount legs left up while walking, default 2 cm
 float Tstride = 0;														
-float TwistFactor = 100;												// convert between raw twist and meter
+float xyTwistFactor = 100;												// convert between raw twist and meter xy
+float tTwistFactor = 1000;												// convert between raw twist and meter theta
 short int LoopHz = 5;													// rate for loops
 int PublishDelay = 300*1000;											// delay after publishing
 int HighSpeed = 0;														// Speed for fast movements
@@ -107,6 +108,7 @@ int main(int argc, char **argv)
 	//~ ROS_INFO_STREAM("Main thread id=" << boost::this_thread::get_id());
 	
 	int LegAngs[3] = {0};												// temp for holding leg angles
+	PosArray.command = 0;												// update joints via speed
 	ros::Rate loop_rate(LoopHz);
 	//// Start up and stand ////
 	while(ros::ok() && !SHUTDOWN)
@@ -253,10 +255,10 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	{
 		if( -3.5 <= twist->linear.x && twist->linear.x  <= 3.5 )		// check maximium value
 		{
-			Xstride = twist->linear.x/TwistFactor;
+			Xstride = twist->linear.x/xyTwistFactor;
 			printf("Xstride: %f\n", Xstride);
-			HighSpeed = abs( (int)(100.0*twist->linear.x) );
-			LowSpeed = abs( (int)(50.0*twist->linear.x) );
+			HighSpeed = abs( (int)(50.0*twist->linear.x) );
+			LowSpeed = abs( (int)(30.0*twist->linear.x) );
 			xyMove = true;
 		}	
 	}
@@ -264,30 +266,30 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	{
 		if( -3.5 <= twist->linear.y && twist->linear.y  <= 3.5 )		// check maximium value
 		{
-			Ystride = twist->linear.y/TwistFactor;
-			HighSpeed += abs( (int)(100*twist->linear.y) );
-			LowSpeed += abs( (int)(50*twist->linear.y) );
+			Ystride = twist->linear.y/xyTwistFactor;
+			HighSpeed += abs( (int)(50*twist->linear.y) );
+			LowSpeed += abs( (int)(30*twist->linear.y) );
 			xyMove = true;
 		}
 	}
 	if(~xyMove)															// if no xy move
 	{
-		if( twist->linear.y <=  -.1 ||  .1 <= twist->linear.y )			// check minmal value
+		if( twist->angular.z <=  -.1 ||  .1 <= twist->angular.z )		// check minmal value
 		{
-			if( -3.5 <= twist->linear.y && twist->linear.y  <= 3.5 )
+			if( -3.1 <= twist->angular.z && twist->angular.z  <= 3.1 )
 			{
-				Tstride = twist->angular.x/TwistFactor;
+				Tstride = twist->angular.z/tTwistFactor;
+				HighSpeed += abs( (int)(50*twist->angular.z) );
+				LowSpeed += abs( (int)(30*twist->angular.z) );
 				tMove = true;											// there is a theta move now
 			}
 		}
-		
 	}
 	
 	// move
 	if(xyMove)															// if the twist is good (out of dead zone)
 	{
-		//~ // printf("LegGroupTurn: %d\n", LegGroupTurn);
-																		// holds results of function calls, pass/fail
+		// printf("LegGroupTurn: %d\n", LegGroupTurn);
 		if(LegGroupTurn) //move group 1
 		{
 			//~ // move group 1 up and forward
@@ -329,29 +331,51 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 			
 			LegGroupTurn = 1;
 		}// end else //move group 0
-		usleep(PublishDelay);
 	}// end if(xyMove)	
 	else if(tMove) //turn move
 	{
-		//~ // move group 1 up and forward
-		res = MoveLegGroupT(1, Tstride, Zstride, HighSpeed);
-		usleep(PublishDelay);
-		
-		//~ // move group 0 home
-		res = MoveLegGroupT(0, 0, 0, LowSpeed);
-		usleep(2*PublishDelay);
-		
-		//~ // move group 0 back
-		res = MoveLegGroupT(0, (-1)*Tstride, 0, LowSpeed);
-		usleep(PublishDelay);
-		
-		//~ // move group 1 down
-		res = MoveLegGroupT(1, Tstride, 0, HighSpeed);
-		usleep(PublishDelay);
-		
-		LegGroupTurn = 0;
-		
+		if(LegGroupTurn) //move group 1
+		{
+			//~ // move group 1 up and forward
+			res = MoveLegGroupT(1, Tstride, Zstride, HighSpeed);
+			usleep(PublishDelay);
+			
+			//~ // move group 0 home
+			res = MoveLegGroupT(0, 0, 0, LowSpeed);
+			usleep(2*PublishDelay);
+			
+			//~ // move group 0 back
+			res = MoveLegGroupT(0, (-1)*Tstride, 0, LowSpeed);
+			usleep(PublishDelay);
+			
+			//~ // move group 1 down
+			res = MoveLegGroupT(1, Tstride, 0, HighSpeed);
+			usleep(PublishDelay);
+			
+			LegGroupTurn = 0;
+		} // end if(LegGroupTurn) //move group 1
+		else //move group 0
+		{
+			//~ // move group 0 up and forward
+			res = MoveLegGroupT(0, Tstride, Zstride, HighSpeed);
+			usleep(PublishDelay);
+			
+			//~ // move group 1 home
+			res = MoveLegGroupT(1, 0, 0, LowSpeed);
+			usleep(2*PublishDelay);
+			
+			//~ // move group 1 back
+			res = MoveLegGroupT(1, (-1)*Tstride, 0, LowSpeed);
+			usleep(PublishDelay);
+			
+			//~ // move group 0 down
+			res = MoveLegGroupT(0, Tstride, 0, HighSpeed);
+			usleep(PublishDelay);
+			
+			LegGroupTurn = 1;
+		} // end else //move group 0
 	}// end else if(tMove) //turn move
+	usleep(PublishDelay);
 }// end RobotTwistCallback
 
 /***********************************************************************************************************************
@@ -387,9 +411,10 @@ short int WaitForDone(void)
 short int WaitForDone(void)
 {
 	//for(int i = 0; i < 1000; i++)
+	printf("waiting... ");
 	while(CurrentlyMoving && ros::ok() && !SHUTDOWN)
 	{
-		printf("waiting... ");
+		//~ printf("waiting... ");
 		ros::spinOnce();												// Check for leg status msg
 		usleep(100*1000);												// wait 10th of a second
 	}
@@ -445,7 +470,7 @@ short int MoveLegGroupT(short int LegGroup, float Tstride, float Zstride, int Sp
 	float R = pow( pow(Y, 2.0)+pow(X, 2.0) , .5);
 	
 	// calculate FP (foot points) in Robot frame for a single leg G1L1
-	Y = -1*R*sin(Tstride);
+	Y = -1*R*sin(Tstride) + G1L1_Home_Car_Rob[1];
 	X = R*cos(Tstride);
 	
 	float FP_C[3];
@@ -456,8 +481,11 @@ short int MoveLegGroupT(short int LegGroup, float Tstride, float Zstride, int Sp
 	TransferFrame(0, 4, FP_C);											// move points from robot frame to leg frame 4 (G1L1)
 	res = InverseKinematics(FP_C, FP_A);								// find IK, need to check res more inthe future
 	
+	printf("Y: %f, X: %f, R: %f, \n", Y, X, R);
 	if(res)
+	{
 		return 1;
+	}
 	
 	switch(LegGroup)
 	{
@@ -493,9 +521,9 @@ short int MoveLegGroupT(short int LegGroup, float Tstride, float Zstride, int Sp
 		}
 	} // end switch(LegGroup)
 	
-	PosArray.speed = Speed;
-	WaitForDone();												// wait for legs to reach position
-	SpiderRobotMain_pub.publish(PosArray);						// publish command to lift legs up
+	PosArray.speed = Speed;	
+	WaitForDone();														// wait for legs to reach position
+	SpiderRobotMain_pub.publish(PosArray);								// publish command to lift legs up
 	CurrentlyMoving = true;
 	
 	return res;

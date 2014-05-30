@@ -49,7 +49,7 @@ double TIMEOUT_SECONDS = 0.5;
 
 // serial port handler
 int serialPort;
-char bufferR[300];														// reciver buffer
+//~ char bufferR[1000];														// reciver buffer
 
 void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg);
 void SingleCommandCallback(const SpiderRobot_pkg::My2Num::ConstPtr& msg);
@@ -88,15 +88,15 @@ int main(int argc, char** argv)
 	serialPort = openSerialPort(portName);
 
 	// check to see if we connected successfully
-	//~ if(serialPort == -1)
-	//~ {
-		//~ printf("unable to open serial port %s \n", portName);
-		//~ return(0);
-	//~ }
-	//~ else
-	//~ {
-		//~ printf("serial port opened: %s \n", portName);
-	//~ }
+	if(serialPort == -1)
+	{
+		printf("unable to open serial port %s \n", portName);
+		return(0);
+	}
+	else
+	{
+		printf("serial port opened: %s \n", portName);
+	}
 
 	// set up the shutdown handler
 	struct sigaction sigIntHandler;
@@ -169,6 +169,7 @@ int main(int argc, char** argv)
 //void motionCommandCallback(const std_msgs::Int16MultiArray::ConstPtr& msg)
 void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 {
+	char bufferR[300];
 	switch(msg->command)
 	{
 		case 0: // Update all joint commands via speed
@@ -176,7 +177,7 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 			// char bufferR[300];
 			char temp[10] = {'\0'};										// buffer for serial commands, and temp buffer
 			int i, n, pos[18], uSecPos[18], result;						// counter i, size n, position commands in degree, position commands in usec, result from sending serial data
-			//~ printf("\nRecived data for all channels...\n");
+			printf("\nRecived data for all channels...\n");
 			for(i=0 ; i<18; i++)										// get position values
 			{
 				pos[i] = msg->data[i];
@@ -219,14 +220,14 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 			strcat(bufferR, temp);
 
 			n = strlen(bufferR);
-			//~ printf("size: %d\n", n);
-			//~ for(i = 0 ; i < n ; i++)								// print full command for checking
-			//~ printf("%c", bufferR[i]);
-			//~ printf("\n");
+			printf("size: %d\n", n);
+			for(i = 0 ; i < n ; i++)								// print full command for checking
+				printf("%c", bufferR[i]);
+			printf("\n");
 
 			bufferR[n] = 13;											// ascii carrier return, used for end bit. Should also remove null
 			result = write(serialPort, bufferR, n+1);					// send to ssc-32
-			//~ printf("bits sent: %d\n", result);						// print bits sent
+			printf("bits sent: %d\n", result);						// print bits sent
 
 			break;
 		}
