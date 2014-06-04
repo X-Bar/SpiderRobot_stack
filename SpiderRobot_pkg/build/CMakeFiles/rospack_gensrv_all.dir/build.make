@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
+CMAKE_SOURCE_DIR = /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
+CMAKE_BINARY_DIR = /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
 
 # Utility rule file for rospack_gensrv_all.
 
@@ -57,6 +57,6 @@ CMakeFiles/rospack_gensrv_all.dir/clean:
 .PHONY : CMakeFiles/rospack_gensrv_all.dir/clean
 
 CMakeFiles/rospack_gensrv_all.dir/depend:
-	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/rospack_gensrv_all.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/rospack_gensrv_all.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rospack_gensrv_all.dir/depend
 

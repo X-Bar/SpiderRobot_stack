@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
+CMAKE_SOURCE_DIR = /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
+CMAKE_BINARY_DIR = /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RobotMain.dir/depend.make
@@ -46,62 +46,52 @@ include CMakeFiles/RobotMain.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/RobotMain.dir/flags.make
 
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: CMakeFiles/RobotMain.dir/flags.make
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: ../src/RobotMain_pubsub.cpp
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: ../manifest.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/rostime/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/genpy/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/catkin/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/rospack/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/roslib/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/rospy/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/bond/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/smclib/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/bondcpp/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/class_loader/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/pluginlib/package.xml
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o: /opt/ros/groovy/share/nodelet/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o -c /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: CMakeFiles/RobotMain.dir/flags.make
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: ../src/RobotMain_pubsub.cpp
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: ../manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/roslang/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/rospy/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/roscpp/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/roslib/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o -c /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp
 
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp > CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.i
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp > CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.i
 
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp -o CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.s
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/RobotMain_pubsub.cpp -o CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.s
 
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.requires:
-.PHONY : CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.requires
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.requires:
+.PHONY : CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.requires
 
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.provides: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.requires
-	$(MAKE) -f CMakeFiles/RobotMain.dir/build.make CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.provides.build
-.PHONY : CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.provides
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.provides: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.requires
+	$(MAKE) -f CMakeFiles/RobotMain.dir/build.make CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.provides.build
+.PHONY : CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.provides
 
-CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.provides.build: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o
+CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.provides.build: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o
 
 # Object files for target RobotMain
 RobotMain_OBJECTS = \
-"CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o"
+"CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o"
 
 # External object files for target RobotMain
 RobotMain_EXTERNAL_OBJECTS =
 
-../bin/RobotMain: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o
+../bin/RobotMain: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o
 ../bin/RobotMain: CMakeFiles/RobotMain.dir/build.make
 ../bin/RobotMain: CMakeFiles/RobotMain.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/RobotMain"
@@ -111,7 +101,7 @@ RobotMain_EXTERNAL_OBJECTS =
 CMakeFiles/RobotMain.dir/build: ../bin/RobotMain
 .PHONY : CMakeFiles/RobotMain.dir/build
 
-CMakeFiles/RobotMain.dir/requires: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o.requires
+CMakeFiles/RobotMain.dir/requires: CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.o.requires
 .PHONY : CMakeFiles/RobotMain.dir/requires
 
 CMakeFiles/RobotMain.dir/clean:
@@ -119,6 +109,6 @@ CMakeFiles/RobotMain.dir/clean:
 .PHONY : CMakeFiles/RobotMain.dir/clean
 
 CMakeFiles/RobotMain.dir/depend:
-	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/RobotMain.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/RobotMain.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RobotMain.dir/depend
 

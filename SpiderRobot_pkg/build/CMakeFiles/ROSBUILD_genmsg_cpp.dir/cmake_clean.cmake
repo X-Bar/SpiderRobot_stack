@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../msg_gen"
   "../src/SpiderRobot_pkg/msg"
+  "../msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_cpp"
   "../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h"
   "../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h"

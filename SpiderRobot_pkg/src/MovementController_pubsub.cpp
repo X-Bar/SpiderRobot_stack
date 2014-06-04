@@ -465,13 +465,14 @@ short int MoveLegGroupT(short int LegGroup, float Tstride, float Zstride, int Sp
 {
 	int res;
 	// calculate R in robot frame based on G1L1 or leg 4
-	float Y = RobotR + FPG1L1_C[1];										// base R +  last leg(y)
-	float X = FPG1L1_C[0];												// leg(x)
-	float R = pow( pow(Y, 2.0)+pow(X, 2.0) , .5);
+	float R = G1L1_Home_Car_Rob[1];
+	//~ float Y = RobotR + FPG1L1_C[1];										// base R +  last leg(y)
+	//~ float X = FPG1L1_C[0];												// leg(x)
+	//~ float R = pow( pow(Y, 2.0)+pow(X, 2.0) , .5);
 	
 	// calculate FP (foot points) in Robot frame for a single leg G1L1
-	Y = -1*R*sin(Tstride) + G1L1_Home_Car_Rob[1];
-	X = R*cos(Tstride);
+	float X = -1*R*sin(Tstride);
+	float Y = R*cos(Tstride);
 	
 	float FP_C[3];
 	int FP_A[3];														// foot  point
