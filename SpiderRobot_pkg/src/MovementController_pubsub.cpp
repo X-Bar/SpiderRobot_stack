@@ -55,8 +55,8 @@ float Xstride = 0;														// walking stride in X, Y, Z, and rotation theta
 float Ystride = 0;														
 float Zstride = .02;													// amount legs left up while walking, default 2 cm
 float Tstride = 0;														
-float xyTwistFactor = 100;												// convert between raw twist and meter xy
-float tTwistFactor = 1000;												// convert between raw twist and meter theta
+float xyTwistFactor = 75;												// convert between raw twist and meter xy
+float tTwistFactor = 20;												// convert between raw twist and meter theta
 short int LoopHz = 5;													// rate for loops
 int PublishDelay = 300*1000;											// delay after publishing
 int HighSpeed = 0;														// Speed for fast movements
@@ -193,7 +193,7 @@ int main(int argc, char **argv)
 		  }
 		  default:
 		  {
-			PosArray.command = 1;										// command 1 is exit for serial controller
+			PosArray.command = 9;										// command 9 is exit for serial controller
 			SpiderRobotMain_pub.publish(PosArray);						// publish command
 			SHUTDOWN = true;											// use shutdown temp stop while loop
 			break; break;												// exit
@@ -204,6 +204,7 @@ int main(int argc, char **argv)
 		
 	}// while(ros::ok() && !SHUTDOWN) for startup and stand
 	SHUTDOWN = false;													// true was just to exit last switch, make false again
+	PosArray.command = 1;												// change to time movements
 	ROS_INFO("SpiderRobot standup complete");
 	
 	// make subscribing object for movement commands
@@ -250,6 +251,9 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	bool tMove = false;												// checks for theta move
 	short int res;														// holds result
 	
+	HighSpeed = 1;
+	LowSpeed = 2;
+	
 	// logic, find what type of move we need
 	if( twist->linear.x <= -.1 ||  .1 <= twist->linear.x )				// check minmal value
 	{
@@ -257,8 +261,8 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		{
 			Xstride = twist->linear.x/xyTwistFactor;
 			printf("Xstride: %f\n", Xstride);
-			HighSpeed = abs( (int)(50.0*twist->linear.x) );
-			LowSpeed = abs( (int)(30.0*twist->linear.x) );
+			//~ HighSpeed = abs( (int)(100.0*twist->linear.x) );
+			//~ LowSpeed = abs( (int)(50.0*twist->linear.x) );
 			xyMove = true;
 		}	
 	}
@@ -267,8 +271,8 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		if( -3.5 <= twist->linear.y && twist->linear.y  <= 3.5 )		// check maximium value
 		{
 			Ystride = twist->linear.y/xyTwistFactor;
-			HighSpeed += abs( (int)(50*twist->linear.y) );
-			LowSpeed += abs( (int)(30*twist->linear.y) );
+			//~ HighSpeed += abs( (int)(100*twist->linear.y) );
+			//~ LowSpeed += abs( (int)(50*twist->linear.y) );
 			xyMove = true;
 		}
 	}
@@ -279,8 +283,8 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 			if( -3.1 <= twist->angular.z && twist->angular.z  <= 3.1 )
 			{
 				Tstride = twist->angular.z/tTwistFactor;
-				HighSpeed += abs( (int)(50*twist->angular.z) );
-				LowSpeed += abs( (int)(30*twist->angular.z) );
+				//~ HighSpeed = abs( (int)(100*twist->angular.z) );
+				//~ LowSpeed = abs( (int)(50*twist->angular.z) );
 				tMove = true;											// there is a theta move now
 			}
 		}
@@ -292,14 +296,16 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		// printf("LegGroupTurn: %d\n", LegGroupTurn);
 		if(LegGroupTurn) //move group 1
 		{
-			//~ // move group 1 up and forward
+			//~ // move group 1 up and home
 			//~ short int MoveLegGroupxy(short int LegGroup, float Xstride, float Ystride, float Zstride, int Speed)
-			res = MoveLegGroupxy(1, Xstride, Ystride, Zstride, HighSpeed);
+			res = MoveLegGroupxy(1, 0, 0, Zstride, HighSpeed);
 			usleep(PublishDelay);
 			
+			//~ // move group 1 up and forward
+			res = MoveLegGroupxy(1, Xstride, Ystride, Zstride, HighSpeed);
 			//~ // move group 0 home
 			res = MoveLegGroupxy(0, 0, 0, 0, LowSpeed);
-			usleep(2*PublishDelay);
+			usleep(PublishDelay);
 			
 			//~ // move group 0 back
 			res = MoveLegGroupxy(0, (-1)*Xstride, (-1)*Ystride, 0, LowSpeed);
@@ -313,10 +319,12 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		}// end if(LegGroupTurn) //move group 1
 		else //move group 0
 		{
-			//~ // move group 0 up and forward
-			res = MoveLegGroupxy(0, Xstride, Ystride, Zstride, HighSpeed);
+			//~ // move group 0 up and home
+			res = MoveLegGroupxy(0, 0, 0, Zstride, HighSpeed);
 			usleep(PublishDelay);
 			
+			//~ // move group 0 up and forward
+			res = MoveLegGroupxy(0, Xstride, Ystride, Zstride, HighSpeed);
 			//~ // move group 1 home
 			res = MoveLegGroupxy(1, 0, 0, 0, LowSpeed);
 			usleep(PublishDelay);
@@ -336,10 +344,12 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	{
 		if(LegGroupTurn) //move group 1
 		{
-			//~ // move group 1 up and forward
-			res = MoveLegGroupT(1, Tstride, Zstride, HighSpeed);
+			//~ // move group 1 up and home
+			res = MoveLegGroupT(1, 0, Zstride, HighSpeed);
 			usleep(PublishDelay);
 			
+			//~ // move group 1 up and forward
+			res = MoveLegGroupT(1, Tstride, Zstride, HighSpeed);
 			//~ // move group 0 home
 			res = MoveLegGroupT(0, 0, 0, LowSpeed);
 			usleep(2*PublishDelay);
@@ -356,10 +366,12 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 		} // end if(LegGroupTurn) //move group 1
 		else //move group 0
 		{
-			//~ // move group 0 up and forward
-			res = MoveLegGroupT(0, Tstride, Zstride, HighSpeed);
+			//~ // move group 0 up and home
+			res = MoveLegGroupT(0, 0, Zstride, HighSpeed);
 			usleep(PublishDelay);
 			
+			//~ // move group 0 up and forward
+			res = MoveLegGroupT(0, Tstride, Zstride, HighSpeed);
 			//~ // move group 1 home
 			res = MoveLegGroupT(1, 0, 0, LowSpeed);
 			usleep(2*PublishDelay);
@@ -471,7 +483,7 @@ short int MoveLegGroupT(short int LegGroup, float Tstride, float Zstride, int Sp
 	//~ float R = pow( pow(Y, 2.0)+pow(X, 2.0) , .5);
 	
 	// calculate FP (foot points) in Robot frame for a single leg G1L1
-	float X = -1*R*sin(Tstride);
+	float X = R*sin(Tstride);
 	float Y = R*cos(Tstride);
 	
 	float FP_C[3];

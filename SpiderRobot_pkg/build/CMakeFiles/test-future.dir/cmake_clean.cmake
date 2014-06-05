@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../src/SpiderRobot_pkg/msg"
   "../msg_gen"
+  "../src/SpiderRobot_pkg/msg"
   "CMakeFiles/test-future"
 )
 

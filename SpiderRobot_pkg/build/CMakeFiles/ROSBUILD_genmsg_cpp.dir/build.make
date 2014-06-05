@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
+CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
+CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build
 
 # Utility rule file for ROSBUILD_genmsg_cpp.
 
@@ -48,92 +48,132 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h
 CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h
 
 ../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: ../msg/MYMSG.msg
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/roslib/cmake/../../../lib/roslib/gendeps
 ../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: ../manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/roslib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
-../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/cpp_common/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/rostime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/genmsg/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/genpy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/message_runtime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/std_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/rosgraph/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/catkin/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/rospack/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/roslib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/rospy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/rosconsole/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/roscpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/bond/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/smclib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/bondcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/console_bridge/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/class_loader/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/pluginlib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h: /opt/ros/groovy/share/nodelet/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MYMSG.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MYMSG.msg
 
 ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: ../msg/My2Num.msg
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/roslib/cmake/../../../lib/roslib/gendeps
 ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: ../manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/roslib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
-../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_2)
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/cpp_common/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/rostime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/genmsg/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/genpy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/message_runtime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/std_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/rosgraph/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/catkin/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/rospack/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/roslib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/rospy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/rosconsole/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/roscpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/bond/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/smclib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/bondcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/console_bridge/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/class_loader/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/pluginlib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h: /opt/ros/groovy/share/nodelet/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/My2Num.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/My2Num.msg
 
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: ../msg/MyChar.msg
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roslib/cmake/../../../lib/roslib/gendeps
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: ../manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/roslib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
-../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_3)
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/cpp_common/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/rostime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/genmsg/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/genpy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/message_runtime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/std_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/rosgraph/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/catkin/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/rospack/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roslib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/rospy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/rosconsole/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/roscpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/bond/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/smclib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/bondcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/console_bridge/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/class_loader/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/pluginlib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h: /opt/ros/groovy/share/nodelet/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyChar.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyChar.msg
 
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: ../msg/MyArray.msg
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roslib/cmake/../../../lib/roslib/gendeps
 ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: ../manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/roslib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
-../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_4)
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/cpp_common/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/rostime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/genmsg/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/genpy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/message_runtime/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/std_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/rosgraph/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/catkin/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/rospack/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roslib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/rospy/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/rosconsole/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/roscpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/bond/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/smclib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/bondcpp/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/console_bridge/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/class_loader/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/pluginlib/package.xml
+../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h: /opt/ros/groovy/share/nodelet/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyArray.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/msg/MyArray.msg
 
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp
 ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h
@@ -152,6 +192,6 @@ CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend:
-	cd /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend
 

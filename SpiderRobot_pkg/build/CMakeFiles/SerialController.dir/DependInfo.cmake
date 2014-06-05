@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp" "/home/cody/fuerte_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/SerialController.dir/src/SerialController_sub.o"
+  "/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp" "/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/build/CMakeFiles/SerialController.dir/src/SerialController_sub.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
