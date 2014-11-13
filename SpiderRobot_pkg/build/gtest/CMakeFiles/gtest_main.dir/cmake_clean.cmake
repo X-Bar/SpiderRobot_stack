@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-  "/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/lib/libgtest_main.pdb"
-  "/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/lib/libgtest_main.so"
+  "/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderRobot_pkg/lib/libgtest_main.pdb"
+  "/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderRobot_pkg/lib/libgtest_main.so"
 )
 
 # Per-language clean rules from dependency scanning.

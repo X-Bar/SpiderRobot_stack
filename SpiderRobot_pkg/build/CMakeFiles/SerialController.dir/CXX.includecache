@@ -50,11 +50,11 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/SpiderRobot_pkg/ros/assert.h
 
-/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp
+/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderRobot_pkg/src/SerialController_sub.cpp
 ros/ros.h
-/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/ros/ros.h
+/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderRobot_pkg/src/ros/ros.h
 std_msgs/Char.h
-/home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/std_msgs/Char.h
+/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderRobot_pkg/src/std_msgs/Char.h
 stdio.h
 -
 stdlib.h
@@ -345,10 +345,6 @@ common.h
 /opt/ros/groovy/include/ros/common.h
 XmlRpcValue.h
 /opt/ros/groovy/include/ros/XmlRpcValue.h
-vector
--
-map
--
 
 /opt/ros/groovy/include/ros/parameter_adapter.h
 ros/forwards.h

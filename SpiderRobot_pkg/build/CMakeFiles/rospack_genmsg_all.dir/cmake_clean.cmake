@@ -1,6 +1,5 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../msg_gen"
   "../src/SpiderRobot_pkg/msg"
   "CMakeFiles/rospack_genmsg_all"
 )

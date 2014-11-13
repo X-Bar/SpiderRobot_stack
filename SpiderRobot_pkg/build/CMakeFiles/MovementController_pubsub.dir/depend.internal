@@ -5,11 +5,9 @@ CMakeFiles/MovementController_pubsub.dir/src/MovementController_pubsub.cpp.o
  ../include/SpiderRobot_pkg/SpiderConstants.h
  ../include/SpiderRobot_pkg/SpiderFunctions.h
  ../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h
- /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderRobot_pkg/src/MovementController_pubsub.cpp
+ /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderRobot_pkg/src/MovementController_pubsub.cpp
  /opt/ros/groovy/include/XmlRpcDecl.h
  /opt/ros/groovy/include/XmlRpcValue.h
- /opt/ros/groovy/include/geometry_msgs/Twist.h
- /opt/ros/groovy/include/geometry_msgs/Vector3.h
  /opt/ros/groovy/include/ros/advertise_options.h
  /opt/ros/groovy/include/ros/advertise_service_options.h
  /opt/ros/groovy/include/ros/assert.h

@@ -1,12 +1,11 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../msg_gen"
   "../src/SpiderRobot_pkg/msg"
   "CMakeFiles/ROSBUILD_genmsg_cpp"
-  "../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h"
+  "../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h"
   "../msg_gen/cpp/include/SpiderRobot_pkg/My2Num.h"
   "../msg_gen/cpp/include/SpiderRobot_pkg/MyChar.h"
-  "../msg_gen/cpp/include/SpiderRobot_pkg/MyArray.h"
+  "../msg_gen/cpp/include/SpiderRobot_pkg/MYMSG.h"
 )
 
 # Per-language clean rules from dependency scanning.

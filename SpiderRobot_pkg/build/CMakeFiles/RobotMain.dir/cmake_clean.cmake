@@ -1,6 +1,5 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../msg_gen"
   "../src/SpiderRobot_pkg/msg"
   "CMakeFiles/RobotMain.dir/src/RobotMain_pubsub.cpp.o"
   "../bin/RobotMain.pdb"

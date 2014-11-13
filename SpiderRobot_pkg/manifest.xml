@@ -17,9 +17,9 @@
   <depend package="image_transport"/>
   <depend package="gscam"/>
   <depend package="camera_calibration_parsers"/>
--->
+
   <depend package="nodelet"/>
-<!--
+
   <depend package="diagnostic_updater"/>
   <depend package="gazebo" />
 -->

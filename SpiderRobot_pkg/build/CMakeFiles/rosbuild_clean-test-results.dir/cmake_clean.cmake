@@ -1,6 +1,5 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../msg_gen"
   "../src/SpiderRobot_pkg/msg"
   "CMakeFiles/rosbuild_clean-test-results"
 )
