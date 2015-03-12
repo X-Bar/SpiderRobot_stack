@@ -125,10 +125,10 @@ int main(int argc, char** argv)
 	ros::Subscriber motionCommandSubscriber = nh.subscribe("MyArray", 1, motionCommandCallback);
 	ros::Subscriber SingleCommand_sub = nh.subscribe("SingleCommand", 1, SingleCommandCallback);
 	ros::spinOnce();
-
+	ROS_INFO("Serial Controller ready");
 
 	// listen for message until program termination
-	while(ros::ok() && !SHUTDOWN)
+	while(ros::ok() && nh.ok() && !SHUTDOWN)
 	{
 		ros::spinOnce();
 		// perform one iteration of message checking

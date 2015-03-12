@@ -31,11 +31,14 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg
+CMAKE_SOURCE_DIR = /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build
+CMAKE_BINARY_DIR = /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/bin/teleop_pr2.dir/depend.make
@@ -57,14 +60,8 @@ CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/genmsg
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/genpy/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /home/xbar/groovy_workspace/Stacks/common_msgs/geometry_msgs/package.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /home/xbar/groovy_workspace/Stacks/common_msgs/sensor_msgs/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
@@ -74,19 +71,17 @@ CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/catkin
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/rospack/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/roslib/package.xml
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/share/rospy/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o -c /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o -c /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp
 
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp > CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp > CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i
 
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s
 
 CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.requires:
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.requires
@@ -122,6 +117,6 @@ CMakeFiles/bin/teleop_pr2.dir/clean:
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/clean
 
 CMakeFiles/bin/teleop_pr2.dir/depend:
-	cd /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build /home/cody/groovy_workspace/GitHubRepos/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/depend
 

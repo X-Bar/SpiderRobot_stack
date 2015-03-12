@@ -111,7 +111,7 @@ int main(int argc, char **argv)
 	PosArray.command = 0;												// update joints via speed
 	ros::Rate loop_rate(LoopHz);
 	//// Start up and stand ////
-	while(ros::ok() && !SHUTDOWN)
+	while(ros::ok() && nh.ok() && !SHUTDOWN)
 	{
 		switch(STATE)
 		{
