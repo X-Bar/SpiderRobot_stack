@@ -14,13 +14,19 @@ REVISION HISTORY:
 05.17.2013           Cody L. Lundberg reuse. Focus on making code for ssc-32.
 ***********************************************************************************************************************/
 
-#include "ros/ros.h"	
+#include "ros/ros.h"
+//#include "std_msgs/Int16.h"
+//#include "std_msgs/String.h"
 #include "std_msgs/Char.h"
+//#include "std_msgs/Bool.h"
+//#include <geometry_msgs/TwistStamped.h>
+//#include <iostream>
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <string.h>
+//#include <sstream>
 #include <fcntl.h>
 #include <errno.h>
 #include <termios.h>
@@ -43,9 +49,11 @@ double TIMEOUT_SECONDS = 0.5;
 
 // serial port handler
 int serialPort;
+//~ char bufferR[1000];														// reciver buffer
 
 void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg);
 void SingleCommandCallback(const SpiderRobot_pkg::My2Num::ConstPtr& msg);
+//void motionCommandCallback(const std_msgs::Int16MultiArray::ConstPtr& JointPositionsArray);
 void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1);
 int openSerialPort(char* portName);
 void closeSerialPort(int serialPort);
@@ -61,41 +69,20 @@ int main(int argc, char** argv)
 
 	// store the serial port parameters
 	char* portName;
-	
+
+	// validate and parse the command line arguments
+	/*
+	if(argc != 2)
+	{
+		ROS_WARN("USAGE: %s <port_name> \n", argv[0]);
+		return 0;
+	}
+	*/
 	char bufferS[30] = {'\0'};											// buffer for send recieve data
 	int n = 0, i;														// stores result from serial write/read, counter i
 	std_msgs::Char MotorResponse;										// To publish for motor check
 	portName = "/dev/ttyUSB0";
-	
-	// // // // // // // // 
-	// SETUP ROS PHASE
-	// // // // // // // // 
-	
-	// initialize the ROS node
-	ros::init(argc, argv, "base_controller");
-	ros::NodeHandle nh;
-	
-	// set the loop rate to 20 Hz	
-	ros::Rate loop_rate(50);
-	// Start publisher (feedback)
-	ros::Publisher LegStatus_pub = nh.advertise<std_msgs::Char>("LegStatus", 1);
-	// start the subscriber
-	SpiderRobot_pkg::MyArray PosArray;
-	ros::Subscriber motionCommandSubscriber = nh.subscribe("MyArray", 1, motionCommandCallback);
-	ros::Subscriber SingleCommand_sub = nh.subscribe("SingleCommand", 1, SingleCommandCallback);
-	ros::spinOnce();
-	ROS_INFO("Serial Controller ready");
-	
-	// set up the shutdown handler
-	struct sigaction sigIntHandler;
-	sigIntHandler.sa_handler = shutdownHandler;
-	sigemptyset(&sigIntHandler.sa_mask);
-	sigIntHandler.sa_flags = 0;
-	sigaction(SIGINT, &sigIntHandler, NULL);
-	
-	// // // // // // // // 
-	// CONNECT TO PORT PHASE
-	// // // // // // // // 
+	//~ portName = "/dev/hiddev0";
 
 	// attempt to open the serial port
 	serialPort = openSerialPort(portName);
@@ -110,18 +97,40 @@ int main(int argc, char** argv)
 	{
 		printf("serial port opened: %s \n", portName);
 	}
-	
+
+	// set up the shutdown handler
+	struct sigaction sigIntHandler;
+	sigIntHandler.sa_handler = shutdownHandler;
+	sigemptyset(&sigIntHandler.sa_mask);
+	sigIntHandler.sa_flags = 0;
+	sigaction(SIGINT, &sigIntHandler, NULL);
+
+
+	// initialize the ROS node
+	ros::init(argc, argv, "base_controller");
+	ros::NodeHandle nh;
+
 	// shutdown the device until a command is received
 	LAST_COMMAND_TS = ros::Time::now() - ros::Duration(TIMEOUT_SECONDS);
 	//stopMotors(serialPort);
-	
-	// // // // // // // // 
-	//WORKING PHASE
-	// // // // // // // // 
-	
+
+	// Start publisher (feedback)
+	ros::Publisher LegStatus_pub = nh.advertise<std_msgs::Char>("LegStatus", 1);
+
+	// set the loop rate to 20 Hz	
+	ros::Rate loop_rate(50);
+
+	// start the subscriber
+	SpiderRobot_pkg::MyArray PosArray;
+	ros::Subscriber motionCommandSubscriber = nh.subscribe("MyArray", 1, motionCommandCallback);
+	ros::Subscriber SingleCommand_sub = nh.subscribe("SingleCommand", 1, SingleCommandCallback);
+	ros::spinOnce();
+	ROS_INFO("Serial Controller ready");
+
 	// listen for message until program termination
 	while(ros::ok() && nh.ok() && !SHUTDOWN)
 	{
+		ros::spinOnce();
 		// perform one iteration of message checking
 		ros::spinOnce();
 
@@ -145,13 +154,15 @@ int main(int argc, char** argv)
 			MotorResponse.data = bufferS[0];
 			LegStatus_pub.publish(MotorResponse);
 		}
+		//~ else
+		//~ {
+			//~ printf("No response to query");
+		//~ }
+
+
         loop_rate.sleep();												// sleep to maintain the loop rate
     }// end while
-	
-	// // // // // // // // 
-	// DISCONNECT TO PORT PHASE
-	// // // // // // // // 
-	
+
     closeSerialPort(serialPort);										// close the serial port
 }// end main
 
@@ -210,13 +221,13 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 
 			n = strlen(bufferR);
 			printf("size: %d\n", n);
-			for(i = 0 ; i < n ; i++)									// print full command for checking
+			for(i = 0 ; i < n ; i++)								// print full command for checking
 				printf("%c", bufferR[i]);
 			printf("\n");
 
 			bufferR[n] = 13;											// ascii carrier return, used for end bit. Should also remove null
 			result = write(serialPort, bufferR, n+1);					// send to ssc-32
-			printf("bits sent: %d\n", result);							// print bits sent
+			printf("bits sent: %d\n", result);						// print bits sent
 
 			break;
 		}
@@ -323,7 +334,7 @@ void SingleCommandCallback(const SpiderRobot_pkg::My2Num::ConstPtr& msg)
 void CheckPos(int *Pos)
 2 modes
 Mode 0: Takes array of desired angle positions, checks them against known bad angles for safety.
-Mode 1: Takes position and channel and checks for bad angels
+Mode 1: Takes position  and channel and checks for bad angels
 ***********************************************************************************************************************/
 void CheckPos(short int Mode, int *Pos, short int Cha, int *Pos1)
 {
@@ -501,7 +512,6 @@ close the given serial port
 ***********************************************************************************************************************/
 void closeSerialPort(int serialPort)
 {
-	ROS_INFO("Closeing Serial Port");
     tcflush(serialPort, TCIOFLUSH);
     close(serialPort);
 }
