@@ -65,7 +65,7 @@ int main(int argc, char** argv)
 	char bufferS[30] = {'\0'};											// buffer for send recieve data
 	int n = 0, i;														// stores result from serial write/read, counter i
 	std_msgs::Char MotorResponse;										// To publish for motor check
-	portName = "/dev/ttyUSB0";
+	portName = "/dev/ttyUSB0";											// name of the first rs232 port via usb converter. May move this to param later
 	
 	// // // // // // // // 
 	// SETUP ROS PHASE
@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	ros::init(argc, argv, "base_controller");
 	ros::NodeHandle nh;
 	
-	// set the loop rate to 20 Hz	
+	// set the loop rate to 50 Hz	
 	ros::Rate loop_rate(50);
 	// Start publisher (feedback)
 	ros::Publisher LegStatus_pub = nh.advertise<std_msgs::Char>("LegStatus", 1);
@@ -83,10 +83,10 @@ int main(int argc, char** argv)
 	SpiderRobot_pkg::MyArray PosArray;
 	ros::Subscriber motionCommandSubscriber = nh.subscribe("MyArray", 1, motionCommandCallback);
 	ros::Subscriber SingleCommand_sub = nh.subscribe("SingleCommand", 1, SingleCommandCallback);
-	ros::spinOnce();
+	//~ ros::spinOnce();
 	ROS_INFO("Serial Controller ready");
 	
-	// set up the shutdown handler
+	// set up the shutdown handler. will probably remove in future
 	struct sigaction sigIntHandler;
 	sigIntHandler.sa_handler = shutdownHandler;
 	sigemptyset(&sigIntHandler.sa_mask);
@@ -126,8 +126,8 @@ int main(int argc, char** argv)
 		ros::spinOnce();
 
 		// check for received serial data
-		bufferS[0] ='Q';													// Query command
-		bufferS[1] = 13;													// acsii carrier return for end of command
+		bufferS[0] ='Q';												// Query command
+		bufferS[1] = 13;												// acsii carrier return for end of command
 		int result = write(serialPort, bufferS, 2);						// send to ssc-32
 		//~ printf("bits sent: %d\n", result);							// print bits sent 
 		memset(bufferS,0,sizeof(bufferS));								// clear buffer
@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 		n = read(serialPort, bufferS, sizeof(bufferS));					// attempt to read bytes from the port
 		if(n > 0)														// if reponse print any received bytes to terminal
 		{
-			//~ ROS_INFO("\nRECEIVED TTY RESPONSE...");
+			//~ ROS_INFO("\nRECEIVED TTY RESPONSE...");					// uncomment to print message
 			//~ for(i=0; i<n; i++)
 			//~ {
 				//~ printf("%c", buffer[i]);
