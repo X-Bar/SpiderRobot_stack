@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
+CMAKE_SOURCE_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
+CMAKE_BINARY_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Utility rule file for test-results-run.
 
@@ -60,6 +57,6 @@ CMakeFiles/test-results-run.dir/clean:
 .PHONY : CMakeFiles/test-results-run.dir/clean
 
 CMakeFiles/test-results-run.dir/depend:
-	cd /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/test-results-run.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/test-results-run.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-results-run.dir/depend
 

@@ -35,14 +35,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
+CMAKE_SOURCE_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
+CMAKE_BINARY_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -57,47 +54,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -110,9 +66,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -192,19 +148,6 @@ ROSBUILD_gensrv_lisp/fast:
 .PHONY : ROSBUILD_gensrv_lisp/fast
 
 #=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
-
-# Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f CMakeFiles/_catkin_empty_exported_target.dir/build.make CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-#=============================================================================
 # Target rules for targets named bin/teleop_pr2
 
 # Build rule for target.
@@ -231,56 +174,17 @@ bin/teleop_pr2_keyboard/fast:
 .PHONY : bin/teleop_pr2_keyboard/fast
 
 #=============================================================================
-# Target rules for targets named clean_test_results
+# Target rules for targets named clean-test-results
 
 # Build rule for target.
-clean_test_results: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results
-.PHONY : clean_test_results
+clean-test-results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean-test-results
+.PHONY : clean-test-results
 
 # fast build rule for target.
-clean_test_results/fast:
-	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
-.PHONY : clean_test_results/fast
-
-#=============================================================================
-# Target rules for targets named download_extra_data
-
-# Build rule for target.
-download_extra_data: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 download_extra_data
-.PHONY : download_extra_data
-
-# fast build rule for target.
-download_extra_data/fast:
-	$(MAKE) -f CMakeFiles/download_extra_data.dir/build.make CMakeFiles/download_extra_data.dir/build
-.PHONY : download_extra_data/fast
-
-#=============================================================================
-# Target rules for targets named doxygen
-
-# Build rule for target.
-doxygen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 doxygen
-.PHONY : doxygen
-
-# fast build rule for target.
-doxygen/fast:
-	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
-.PHONY : doxygen/fast
-
-#=============================================================================
-# Target rules for targets named rosbuild_clean-test-results
-
-# Build rule for target.
-rosbuild_clean-test-results: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosbuild_clean-test-results
-.PHONY : rosbuild_clean-test-results
-
-# fast build rule for target.
-rosbuild_clean-test-results/fast:
-	$(MAKE) -f CMakeFiles/rosbuild_clean-test-results.dir/build.make CMakeFiles/rosbuild_clean-test-results.dir/build
-.PHONY : rosbuild_clean-test-results/fast
+clean-test-results/fast:
+	$(MAKE) -f CMakeFiles/clean-test-results.dir/build.make CMakeFiles/clean-test-results.dir/build
+.PHONY : clean-test-results/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -348,19 +252,6 @@ rospack_gensrv/fast:
 .PHONY : rospack_gensrv/fast
 
 #=============================================================================
-# Target rules for targets named run_tests
-
-# Build rule for target.
-run_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests
-.PHONY : run_tests
-
-# fast build rule for target.
-run_tests/fast:
-	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
-.PHONY : run_tests/fast
-
-#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -425,79 +316,35 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-src/teleop_pr2.o: src/teleop_pr2.cpp.o
+# target to build an object file
+src/teleop_pr2.o:
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o
 .PHONY : src/teleop_pr2.o
 
-# target to build an object file
-src/teleop_pr2.cpp.o:
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o
-.PHONY : src/teleop_pr2.cpp.o
-
-src/teleop_pr2.i: src/teleop_pr2.cpp.i
+# target to preprocess a source file
+src/teleop_pr2.i:
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.i
 .PHONY : src/teleop_pr2.i
 
-# target to preprocess a source file
-src/teleop_pr2.cpp.i:
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i
-.PHONY : src/teleop_pr2.cpp.i
-
-src/teleop_pr2.s: src/teleop_pr2.cpp.s
+# target to generate assembly for a file
+src/teleop_pr2.s:
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.s
 .PHONY : src/teleop_pr2.s
 
-# target to generate assembly for a file
-src/teleop_pr2.cpp.s:
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s
-.PHONY : src/teleop_pr2.cpp.s
-
-src/teleop_pr2_keyboard.o: src/teleop_pr2_keyboard.cpp.o
+# target to build an object file
+src/teleop_pr2_keyboard.o:
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o
 .PHONY : src/teleop_pr2_keyboard.o
 
-# target to build an object file
-src/teleop_pr2_keyboard.cpp.o:
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o
-.PHONY : src/teleop_pr2_keyboard.cpp.o
-
-src/teleop_pr2_keyboard.i: src/teleop_pr2_keyboard.cpp.i
+# target to preprocess a source file
+src/teleop_pr2_keyboard.i:
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.i
 .PHONY : src/teleop_pr2_keyboard.i
 
-# target to preprocess a source file
-src/teleop_pr2_keyboard.cpp.i:
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.i
-.PHONY : src/teleop_pr2_keyboard.cpp.i
-
-src/teleop_pr2_keyboard.s: src/teleop_pr2_keyboard.cpp.s
-.PHONY : src/teleop_pr2_keyboard.s
-
 # target to generate assembly for a file
-src/teleop_pr2_keyboard.cpp.s:
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.s
-.PHONY : src/teleop_pr2_keyboard.cpp.s
+src/teleop_pr2_keyboard.s:
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.s
+.PHONY : src/teleop_pr2_keyboard.s
 
 # Help Target
 help:
@@ -509,32 +356,21 @@ help:
 	@echo "... ROSBUILD_genmsg_lisp"
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... bin/teleop_pr2"
 	@echo "... bin/teleop_pr2_keyboard"
-	@echo "... clean_test_results"
-	@echo "... download_extra_data"
-	@echo "... doxygen"
+	@echo "... clean-test-results"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... rosbuild_clean-test-results"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
-	@echo "... run_tests"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
-	@echo "... gtest"
-	@echo "... gtest_main"
 	@echo "... src/teleop_pr2.o"
 	@echo "... src/teleop_pr2.i"
 	@echo "... src/teleop_pr2.s"
