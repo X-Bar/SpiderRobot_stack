@@ -13,6 +13,8 @@ max_vw_run: 1.4
 max_vx_run: 1.0
 max_vy_run: 1.0
 
+# Below is unused for SpiderRobot and left from pr2
+# Functions may have be disabled in source code. 
 # Head 
 max_pan: 2.7
 max_tilt: 1.4
