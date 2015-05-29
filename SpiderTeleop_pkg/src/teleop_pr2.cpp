@@ -40,7 +40,7 @@
 #include "sensor_msgs/Joy.h"
 #include "geometry_msgs/Twist.h"
 #include "sensor_msgs/JointState.h"
-#include "trajectory_msgs/JointTrajectory.h"
+//~ #include "trajectory_msgs/JointTrajectory.h"
 //~ #include "pr2_controllers_msgs/JointTrajectoryControllerState.h"
 #include "topic_tools/MuxSelect.h"
 #include "std_msgs/String.h"
@@ -176,17 +176,17 @@ class TeleopPR2
         ROS_DEBUG("head_button: %d\n", head_button);
         ROS_DEBUG("joy_msg_timeout: %f\n", joy_msg_timeout);
 
-        if (torso_dn_button != 0 && torso_up_button != 0)
-        {
-          torso_publish_ = true;
-          torso_pub_ = n_.advertise<trajectory_msgs::JointTrajectory>(TORSO_TOPIC, 1);
-        }
-
-        if (head_button != 0)
-        {
-          head_pub_ = n_.advertise<trajectory_msgs::JointTrajectory>(HEAD_TOPIC, 1);
-          head_publish_ = true;
-        }
+        //~ if (torso_dn_button != 0 && torso_up_button != 0)
+        //~ {
+          //~ torso_publish_ = true;
+          //~ torso_pub_ = n_.advertise<trajectory_msgs::JointTrajectory>(TORSO_TOPIC, 1);
+        //~ }
+//~ 
+        //~ if (head_button != 0)
+        //~ {
+          //~ head_pub_ = n_.advertise<trajectory_msgs::JointTrajectory>(HEAD_TOPIC, 1);
+          //~ head_publish_ = true;
+        //~ }
 
         vel_pub_ = n_.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
@@ -295,56 +295,56 @@ class TeleopPR2
       vel_pub_.publish(cmd);
 
       // Torso
-      if (torso_publish_)
-      {
-        double dt = 1.0/double(PUBLISH_FREQ);
-        double horizon = 5.0 * dt;
-
-        trajectory_msgs::JointTrajectory traj;
-        traj.header.stamp = ros::Time::now() + ros::Duration(0.01);
-        traj.joint_names.push_back("torso_lift_joint");
-        traj.points.resize(1);
-        traj.points[0].positions.push_back(req_torso + req_torso_vel * horizon);
-        traj.points[0].velocities.push_back(req_torso_vel);
-        traj.points[0].time_from_start = ros::Duration(horizon);
-        torso_pub_.publish(traj);
-
-        // Updates the current positions
-        req_torso += req_torso_vel * dt;
-        req_torso = max(min(req_torso, max_torso), min_torso);
-      }
-
-      // Head
-      if (cmd_head && head_publish_)
-      {
-        double dt = 1.0/double(PUBLISH_FREQ);
-        double horizon = 3.0 * dt;
-
-        trajectory_msgs::JointTrajectory traj;
-        traj.header.stamp = ros::Time::now() + ros::Duration(0.01);
-        traj.joint_names.push_back("head_pan_joint");
-        traj.joint_names.push_back("head_tilt_joint");
-        traj.points.resize(1);
-        traj.points[0].positions.push_back(req_pan + req_pan_vel * horizon);
-        traj.points[0].velocities.push_back(req_pan_vel);
-        traj.points[0].positions.push_back(req_tilt + req_tilt_vel * horizon);
-        traj.points[0].velocities.push_back(req_tilt_vel);
-        traj.points[0].time_from_start = ros::Duration(horizon);
-        head_pub_.publish(traj);
-
-        // Updates the current positions
-        req_pan += req_pan_vel * dt;
-        req_pan = max(min(req_pan, max_pan), -max_pan);
-        req_tilt += req_tilt_vel * dt;
-        req_tilt = max(min(req_tilt, max_tilt), min_tilt);
-      }
-
-      if (req_torso != 0)
-        fprintf(stdout,"teleop_base:: %f, %f, %f. Head:: %f, %f. Torso cmd: %f.\n",
-                cmd.linear.x, cmd.linear.y, cmd.angular.z, req_pan, req_tilt, req_torso_vel);
-      else
-        fprintf(stdout,"teleop_base:: %f, %f, %f. Head:: %f, %f\n",
-                cmd.linear.x ,cmd.linear.y, cmd.angular.z, req_pan, req_tilt);
+      //~ if (torso_publish_)
+      //~ {
+        //~ double dt = 1.0/double(PUBLISH_FREQ);
+        //~ double horizon = 5.0 * dt;
+//~ 
+        //~ trajectory_msgs::JointTrajectory traj;
+        //~ traj.header.stamp = ros::Time::now() + ros::Duration(0.01);
+        //~ traj.joint_names.push_back("torso_lift_joint");
+        //~ traj.points.resize(1);
+        //~ traj.points[0].positions.push_back(req_torso + req_torso_vel * horizon);
+        //~ traj.points[0].velocities.push_back(req_torso_vel);
+        //~ traj.points[0].time_from_start = ros::Duration(horizon);
+        //~ torso_pub_.publish(traj);
+//~ 
+        //~ // Updates the current positions
+        //~ req_torso += req_torso_vel * dt;
+        //~ req_torso = max(min(req_torso, max_torso), min_torso);
+      //~ }
+//~ 
+      //~ // Head
+      //~ if (cmd_head && head_publish_)
+      //~ {
+        //~ double dt = 1.0/double(PUBLISH_FREQ);
+        //~ double horizon = 3.0 * dt;
+//~ 
+        //~ trajectory_msgs::JointTrajectory traj;
+        //~ traj.header.stamp = ros::Time::now() + ros::Duration(0.01);
+        //~ traj.joint_names.push_back("head_pan_joint");
+        //~ traj.joint_names.push_back("head_tilt_joint");
+        //~ traj.points.resize(1);
+        //~ traj.points[0].positions.push_back(req_pan + req_pan_vel * horizon);
+        //~ traj.points[0].velocities.push_back(req_pan_vel);
+        //~ traj.points[0].positions.push_back(req_tilt + req_tilt_vel * horizon);
+        //~ traj.points[0].velocities.push_back(req_tilt_vel);
+        //~ traj.points[0].time_from_start = ros::Duration(horizon);
+        //~ head_pub_.publish(traj);
+//~ 
+        //~ // Updates the current positions
+        //~ req_pan += req_pan_vel * dt;
+        //~ req_pan = max(min(req_pan, max_pan), -max_pan);
+        //~ req_tilt += req_tilt_vel * dt;
+        //~ req_tilt = max(min(req_tilt, max_tilt), min_tilt);
+      //~ }
+//~ 
+      //~ if (req_torso != 0)
+        //~ fprintf(stdout,"teleop_base:: %f, %f, %f. Head:: %f, %f. Torso cmd: %f.\n",
+                //~ cmd.linear.x, cmd.linear.y, cmd.angular.z, req_pan, req_tilt, req_torso_vel);
+      //~ else
+        //~ fprintf(stdout,"teleop_base:: %f, %f, %f. Head:: %f, %f\n",
+                //~ cmd.linear.x ,cmd.linear.y, cmd.angular.z, req_pan, req_tilt);
     }
     else
     {
