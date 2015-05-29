@@ -112,25 +112,7 @@ int main(int argc, char** argv)
 		printf("serial port opened: %s \n", portName);
 		ROS_INFO("serial port opened: %s \n", portName);
 	}
-<<<<<<< HEAD
 
-	// set up the shutdown handler
-	struct sigaction sigIntHandler;
-	sigIntHandler.sa_handler = shutdownHandler;
-	sigemptyset(&sigIntHandler.sa_mask);
-	sigIntHandler.sa_flags = 0;
-	sigaction(SIGINT, &sigIntHandler, NULL);
-
-
-	// initialize the ROS node
-	ros::init(argc, argv, "base_controller");
-	ros::NodeHandle nh;
-
-
-
-=======
-	
->>>>>>> 1ce1288601e1376aaf59a64bb089dc074cfda8b3
 	// shutdown the device until a command is received
 	LAST_COMMAND_TS = ros::Time::now() - ros::Duration(TIMEOUT_SECONDS);
 	//stopMotors(serialPort);
