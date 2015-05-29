@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o"
+  "CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o"
   "../bin/teleop_pr2_keyboard.pdb"
   "../bin/teleop_pr2_keyboard"
 )

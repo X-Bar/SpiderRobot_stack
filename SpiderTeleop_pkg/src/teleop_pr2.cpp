@@ -41,7 +41,7 @@
 #include "geometry_msgs/Twist.h"
 #include "sensor_msgs/JointState.h"
 #include "trajectory_msgs/JointTrajectory.h"
-#include "pr2_controllers_msgs/JointTrajectoryControllerState.h"
+//~ #include "pr2_controllers_msgs/JointTrajectoryControllerState.h"
 #include "topic_tools/MuxSelect.h"
 #include "std_msgs/String.h"
 
@@ -191,7 +191,7 @@ class TeleopPR2
         vel_pub_ = n_.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
         joy_sub_ = n_.subscribe("joy", 10, &TeleopPR2::joy_cb, this);
-        torso_state_sub_ = n_.subscribe("torso_controller/state", 1, &TeleopPR2::torsoCB, this);
+        //~ torso_state_sub_ = n_.subscribe("torso_controller/state", 1, &TeleopPR2::torsoCB, this);
 
         //if we're going to use the mux, then we'll subscribe to state changes on the mux
         if(use_mux_){
@@ -373,15 +373,15 @@ class TeleopPR2
     last_deadman_ = deadman_;
   }
 
-  void torsoCB(const pr2_controllers_msgs::JointTrajectoryControllerState::ConstPtr &msg)
-  {
-    double xd = req_torso;
-    const double A = 0.003;
-    if (fabs(msg->actual.positions[0] - xd) > A*1.001)
-    {
-      req_torso = min(max(msg->actual.positions[0] - A, xd), msg->actual.positions[0] + A);
-    }
-  }
+  //~ void torsoCB(const pr2_controllers_msgs::JointTrajectoryControllerState::ConstPtr &msg)
+  //~ {
+    //~ double xd = req_torso;
+    //~ const double A = 0.003;
+    //~ if (fabs(msg->actual.positions[0] - xd) > A*1.001)
+    //~ {
+      //~ req_torso = min(max(msg->actual.positions[0] - A, xd), msg->actual.positions[0] + A);
+    //~ }
+  //~ }
 };
 
 int main(int argc, char **argv)

@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
+CMAKE_SOURCE_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
+CMAKE_BINARY_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/bin/teleop_pr2.dir/depend.make
@@ -49,61 +46,44 @@ include CMakeFiles/bin/teleop_pr2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bin/teleop_pr2.dir/flags.make
 
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: CMakeFiles/bin/teleop_pr2.dir/flags.make
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: ../src/teleop_pr2.cpp
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: ../manifest.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/cpp_common/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rostime/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/roscpp_traits/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/roscpp_serialization/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/genmsg/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/genpy/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/message_runtime/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/std_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/geometry_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/sensor_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/catkin/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/gencpp/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/genlisp/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/message_generation/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rosbuild/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rosconsole/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rosgraph_msgs/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/xmlrpcpp/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/roscpp/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rosgraph/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rospack/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/roslib/package.xml
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o: /opt/ros/indigo/share/rospy/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o -c /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: CMakeFiles/bin/teleop_pr2.dir/flags.make
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: ../src/teleop_pr2.cpp
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: ../manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: /opt/ros/fuerte/share/roslang/manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: /opt/ros/fuerte/share/roscpp/manifest.xml
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o: /opt/ros/fuerte/share/rospy/manifest.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o -c /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp
 
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp > CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.i
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp > CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.i
 
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.s
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2.cpp -o CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.s
 
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.requires:
-.PHONY : CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.requires
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.requires:
+.PHONY : CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.requires
 
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.provides: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.provides.build
-.PHONY : CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.provides
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.provides: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.requires
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2.dir/build.make CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.provides.build
+.PHONY : CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.provides
 
-CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.provides.build: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o
+CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.provides.build: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o
 
 # Object files for target bin/teleop_pr2
 bin/teleop_pr2_OBJECTS = \
-"CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o"
+"CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o"
 
 # External object files for target bin/teleop_pr2
 bin/teleop_pr2_EXTERNAL_OBJECTS =
 
-../bin/teleop_pr2: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o
+../bin/teleop_pr2: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o
 ../bin/teleop_pr2: CMakeFiles/bin/teleop_pr2.dir/build.make
 ../bin/teleop_pr2: CMakeFiles/bin/teleop_pr2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/teleop_pr2"
@@ -113,7 +93,7 @@ bin/teleop_pr2_EXTERNAL_OBJECTS =
 CMakeFiles/bin/teleop_pr2.dir/build: ../bin/teleop_pr2
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/build
 
-CMakeFiles/bin/teleop_pr2.dir/requires: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o.requires
+CMakeFiles/bin/teleop_pr2.dir/requires: CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o.requires
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/requires
 
 CMakeFiles/bin/teleop_pr2.dir/clean:
@@ -121,6 +101,6 @@ CMakeFiles/bin/teleop_pr2.dir/clean:
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/clean
 
 CMakeFiles/bin/teleop_pr2.dir/depend:
-	cd /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bin/teleop_pr2.dir/depend
 

@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
+CMAKE_SOURCE_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
+CMAKE_BINARY_DIR = /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/bin/teleop_pr2_keyboard.dir/depend.make
@@ -49,61 +46,44 @@ include CMakeFiles/bin/teleop_pr2_keyboard.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bin/teleop_pr2_keyboard.dir/flags.make
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: CMakeFiles/bin/teleop_pr2_keyboard.dir/flags.make
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: ../src/teleop_pr2_keyboard.cpp
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: ../manifest.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/cpp_common/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rostime/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/roscpp_traits/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/roscpp_serialization/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/genmsg/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/genpy/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/message_runtime/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/std_msgs/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/geometry_msgs/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/sensor_msgs/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/catkin/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/gencpp/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/genlisp/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/message_generation/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rosbuild/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rosconsole/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rosgraph_msgs/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/xmlrpcpp/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/roscpp/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rosgraph/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rospack/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/roslib/package.xml
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o: /opt/ros/indigo/share/rospy/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o -c /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2_keyboard.cpp
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: CMakeFiles/bin/teleop_pr2_keyboard.dir/flags.make
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: ../src/teleop_pr2_keyboard.cpp
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: ../manifest.xml
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: /opt/ros/fuerte/share/roslang/manifest.xml
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: /opt/ros/fuerte/share/roscpp/manifest.xml
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o: /opt/ros/fuerte/share/rospy/manifest.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o -c /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2_keyboard.cpp
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2_keyboard.cpp > CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.i
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2_keyboard.cpp > CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.i
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2_keyboard.cpp -o CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.s
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/src/teleop_pr2_keyboard.cpp -o CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.s
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.requires:
-.PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.requires
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.requires:
+.PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.requires
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.provides: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.requires
-	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.provides.build
-.PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.provides
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.provides: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.requires
+	$(MAKE) -f CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.provides.build
+.PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.provides
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.provides.build: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o
+CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.provides.build: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o
 
 # Object files for target bin/teleop_pr2_keyboard
 bin/teleop_pr2_keyboard_OBJECTS = \
-"CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o"
+"CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o"
 
 # External object files for target bin/teleop_pr2_keyboard
 bin/teleop_pr2_keyboard_EXTERNAL_OBJECTS =
 
-../bin/teleop_pr2_keyboard: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o
+../bin/teleop_pr2_keyboard: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o
 ../bin/teleop_pr2_keyboard: CMakeFiles/bin/teleop_pr2_keyboard.dir/build.make
 ../bin/teleop_pr2_keyboard: CMakeFiles/bin/teleop_pr2_keyboard.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/teleop_pr2_keyboard"
@@ -113,7 +93,7 @@ bin/teleop_pr2_keyboard_EXTERNAL_OBJECTS =
 CMakeFiles/bin/teleop_pr2_keyboard.dir/build: ../bin/teleop_pr2_keyboard
 .PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/build
 
-CMakeFiles/bin/teleop_pr2_keyboard.dir/requires: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.cpp.o.requires
+CMakeFiles/bin/teleop_pr2_keyboard.dir/requires: CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o.requires
 .PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/requires
 
 CMakeFiles/bin/teleop_pr2_keyboard.dir/clean:
@@ -121,6 +101,6 @@ CMakeFiles/bin/teleop_pr2_keyboard.dir/clean:
 .PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/clean
 
 CMakeFiles/bin/teleop_pr2_keyboard.dir/depend:
-	cd /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2_keyboard.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/codyl/fuerte_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/bin/teleop_pr2_keyboard.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bin/teleop_pr2_keyboard.dir/depend
 

@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.cpp.o"
+  "CMakeFiles/bin/teleop_pr2.dir/src/teleop_pr2.o"
   "../bin/teleop_pr2.pdb"
   "../bin/teleop_pr2"
 )
