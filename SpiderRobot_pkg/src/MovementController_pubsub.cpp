@@ -95,7 +95,7 @@ ros::Publisher SpiderRobotMain_pub;// = nh.advertise<SpiderRobot_pkg::MyArray>("
 
 int main(int argc, char **argv)
 {
-	ROS_INFO("Starting SpiderMovementController_pubsub \n");
+	ROS_INFO("Starting SpiderMovementController_pubsub");
 	
 	ros::init(argc, argv, "MovementController");						// start ROS connection
 	ros::NodeHandle nh;													// make node handle
@@ -110,7 +110,7 @@ int main(int argc, char **argv)
 	int LegAngs[3] = {0};												// temp for holding leg angles
 	PosArray.command = 0;												// update joints via speed
 	ros::Rate loop_rate(LoopHz);
-	//// Start up and stand ////
+	ROS_INFO ("//// Start up and stand ////");
 	while(ros::ok() && nh.ok() && !SHUTDOWN)
 	{
 		switch(STATE)

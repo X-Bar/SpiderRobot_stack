@@ -1,4 +1,4 @@
 <launch>
 	<node pkg = "SpiderRobot_pkg" name = "SerialController" type = "SerialController" />
-	<node pkg = "SpiderRobot_pkg" name = "MovementController_pubsub" type = "MovementController_pubsub" />
+	<node pkg = "SpiderRobot_pkg" name = "MovementController_pubsub" type = "MovementController_pubsub" output="screen"/>
 </launch>

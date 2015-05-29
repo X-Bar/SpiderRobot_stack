@@ -91,11 +91,13 @@ int main(int argc, char** argv)
 	if(serialPort == -1)
 	{
 		printf("unable to open serial port %s \n", portName);
+		ROS_ERROR("unable to open serial port %s \n", portName);
 		return(0);
 	}
 	else
 	{
 		printf("serial port opened: %s \n", portName);
+		ROS_INFO("serial port opened: %s \n", portName);
 	}
 
 	// set up the shutdown handler
@@ -109,6 +111,8 @@ int main(int argc, char** argv)
 	// initialize the ROS node
 	ros::init(argc, argv, "base_controller");
 	ros::NodeHandle nh;
+
+
 
 	// shutdown the device until a command is received
 	LAST_COMMAND_TS = ros::Time::now() - ros::Duration(TIMEOUT_SECONDS);
