@@ -1,4 +1,0 @@
-<launch>
-	<node pkg = "SpiderRobot" name = "SerialController" type = "listener">
-	<node pkg = "SpiderRobot" name = "SpiderRobotMain" type = "talker">
-<launch>
