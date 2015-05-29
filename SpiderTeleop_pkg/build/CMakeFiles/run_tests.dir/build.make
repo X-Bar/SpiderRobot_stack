@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
+CMAKE_SOURCE_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
+CMAKE_BINARY_DIR = /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build
 
 # Utility rule file for run_tests.
 
@@ -60,6 +60,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build /home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

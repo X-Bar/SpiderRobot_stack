@@ -4,24 +4,24 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/usr/src/gtest/src/gtest_main.cc" "/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+  "/usr/src/gtest/src/gtest_main.cc" "/home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
   "GTEST_CREATE_SHARED_LIBRARY=1"
+  "ROS_PACKAGE_NAME=\"SpiderTeleop_pkg\""
   )
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/xbar/groovy_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/include"
-  "/opt/ros/groovy/include"
+  "/home/carrybot/indigo_workspace/Git/SpiderRobot_stack/SpiderTeleop_pkg/include"
   "/usr/src/gtest/include"
   "/usr/src/gtest"
   )

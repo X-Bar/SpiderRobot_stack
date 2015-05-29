@@ -1,8 +1,8 @@
 <launch>
  
-  <node pkg="pr2_teleop" type="teleop_pr2" name="pr2_teleop" output="screen">
+  <node pkg="SpiderTeleop_pkg" type="teleop_pr2" name="pr2_teleop" output="screen">
     <remap from="cmd_vel" to="RobotTwist" />
-    <rosparam file="$(find pr2_teleop)/config/teleop.yaml" command="load" />
+    <rosparam file="$(find SpiderTeleop_pkg)/config/teleop.yaml" command="load" />
   </node>
 
 </launch>
