@@ -22,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_Base.STL" />
+          filename="package://SpiderRobot/meshes/Link_Base.STL" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_Base.STL" />
+          filename="package://SpiderRobot/meshes/Link_Base.STL" />
       </geometry>
     </collision>
   </link>
@@ -62,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_00.STL" />
+          filename="package://SpiderRobot/meshes/Link_00.STL" />
       </geometry>
       <material
         name="">
@@ -76,7 +76,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_00.STL" />
+          filename="package://SpiderRobot/meshes/Link_00.STL" />
       </geometry>
     </collision>
   </link>
@@ -91,7 +91,7 @@
     <child
       link="Link_00" />
     <axis
-      xyz="0 1 0" />
+      xyz="-1 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -120,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_01.STL" />
+          filename="package://SpiderRobot/meshes/Link_01.STL" />
       </geometry>
       <material
         name="">
@@ -134,7 +134,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_01.STL" />
+          filename="package://SpiderRobot/meshes/Link_01.STL" />
       </geometry>
     </collision>
   </link>
@@ -178,7 +178,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_02.STL" />
+          filename="package://SpiderRobot/meshes/Link_02.STL" />
       </geometry>
       <material
         name="">
@@ -192,7 +192,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_02.STL" />
+          filename="package://SpiderRobot/meshes/Link_02.STL" />
       </geometry>
     </collision>
   </link>
@@ -207,7 +207,7 @@
     <child
       link="Link_02" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -236,7 +236,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_10.STL" />
+          filename="package://SpiderRobot/meshes/Link_10.STL" />
       </geometry>
       <material
         name="">
@@ -250,7 +250,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_10.STL" />
+          filename="package://SpiderRobot/meshes/Link_10.STL" />
       </geometry>
     </collision>
   </link>
@@ -265,7 +265,7 @@
     <child
       link="Link_10" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -294,7 +294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_11.STL" />
+          filename="package://SpiderRobot/meshes/Link_11.STL" />
       </geometry>
       <material
         name="">
@@ -308,7 +308,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_11.STL" />
+          filename="package://SpiderRobot/meshes/Link_11.STL" />
       </geometry>
     </collision>
   </link>
@@ -352,7 +352,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_12.STL" />
+          filename="package://SpiderRobot/meshes/Link_12.STL" />
       </geometry>
       <material
         name="">
@@ -366,7 +366,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_12.STL" />
+          filename="package://SpiderRobot/meshes/Link_12.STL" />
       </geometry>
     </collision>
   </link>
@@ -381,7 +381,7 @@
     <child
       link="Link_12" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -410,7 +410,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_20.STL" />
+          filename="package://SpiderRobot/meshes/Link_20.STL" />
       </geometry>
       <material
         name="">
@@ -424,7 +424,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_20.STL" />
+          filename="package://SpiderRobot/meshes/Link_20.STL" />
       </geometry>
     </collision>
   </link>
@@ -439,7 +439,7 @@
     <child
       link="Link_20" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -468,7 +468,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_21.STL" />
+          filename="package://SpiderRobot/meshes/Link_21.STL" />
       </geometry>
       <material
         name="">
@@ -482,7 +482,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_21.STL" />
+          filename="package://SpiderRobot/meshes/Link_21.STL" />
       </geometry>
     </collision>
   </link>
@@ -497,7 +497,7 @@
     <child
       link="Link_21" />
     <axis
-      xyz="-1 0 0" />
+      xyz="1 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -526,7 +526,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_22.STL" />
+          filename="package://SpiderRobot/meshes/Link_22.STL" />
       </geometry>
       <material
         name="">
@@ -540,7 +540,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_22.STL" />
+          filename="package://SpiderRobot/meshes/Link_22.STL" />
       </geometry>
     </collision>
   </link>
@@ -555,7 +555,7 @@
     <child
       link="Link_22" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -584,7 +584,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_30.STL" />
+          filename="package://SpiderRobot/meshes/Link_30.STL" />
       </geometry>
       <material
         name="">
@@ -598,7 +598,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_30.STL" />
+          filename="package://SpiderRobot/meshes/Link_30.STL" />
       </geometry>
     </collision>
   </link>
@@ -613,7 +613,7 @@
     <child
       link="Link_30" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -642,7 +642,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_31.STL" />
+          filename="package://SpiderRobot/meshes/Link_31.STL" />
       </geometry>
       <material
         name="">
@@ -656,7 +656,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_31.STL" />
+          filename="package://SpiderRobot/meshes/Link_31.STL" />
       </geometry>
     </collision>
   </link>
@@ -671,7 +671,7 @@
     <child
       link="Link_31" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -700,7 +700,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_32.STL" />
+          filename="package://SpiderRobot/meshes/Link_32.STL" />
       </geometry>
       <material
         name="">
@@ -714,7 +714,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_32.STL" />
+          filename="package://SpiderRobot/meshes/Link_32.STL" />
       </geometry>
     </collision>
   </link>
@@ -729,7 +729,7 @@
     <child
       link="Link_32" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -758,7 +758,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_40.STL" />
+          filename="package://SpiderRobot/meshes/Link_40.STL" />
       </geometry>
       <material
         name="">
@@ -772,7 +772,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_40.STL" />
+          filename="package://SpiderRobot/meshes/Link_40.STL" />
       </geometry>
     </collision>
   </link>
@@ -787,7 +787,7 @@
     <child
       link="Link_40" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -816,7 +816,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_41.STL" />
+          filename="package://SpiderRobot/meshes/Link_41.STL" />
       </geometry>
       <material
         name="">
@@ -830,7 +830,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_41.STL" />
+          filename="package://SpiderRobot/meshes/Link_41.STL" />
       </geometry>
     </collision>
   </link>
@@ -845,7 +845,7 @@
     <child
       link="Link_41" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -874,7 +874,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_42.STL" />
+          filename="package://SpiderRobot/meshes/Link_42.STL" />
       </geometry>
       <material
         name="">
@@ -888,7 +888,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_42.STL" />
+          filename="package://SpiderRobot/meshes/Link_42.STL" />
       </geometry>
     </collision>
   </link>
@@ -903,7 +903,7 @@
     <child
       link="Link_42" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -932,7 +932,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_50.STL" />
+          filename="package://SpiderRobot/meshes/Link_50.STL" />
       </geometry>
       <material
         name="">
@@ -946,7 +946,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_50.STL" />
+          filename="package://SpiderRobot/meshes/Link_50.STL" />
       </geometry>
     </collision>
   </link>
@@ -961,7 +961,7 @@
     <child
       link="Link_50" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -990,7 +990,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_51.STL" />
+          filename="package://SpiderRobot/meshes/Link_51.STL" />
       </geometry>
       <material
         name="">
@@ -1004,7 +1004,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_51.STL" />
+          filename="package://SpiderRobot/meshes/Link_51.STL" />
       </geometry>
     </collision>
   </link>
@@ -1048,7 +1048,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_52.STL" />
+          filename="package://SpiderRobot/meshes/Link_52.STL" />
       </geometry>
       <material
         name="">
@@ -1062,7 +1062,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://SpiderRobot_pkg/meshes/Link_52.STL" />
+          filename="package://SpiderRobot/meshes/Link_52.STL" />
       </geometry>
     </collision>
   </link>
@@ -1077,7 +1077,7 @@
     <child
       link="Link_52" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
     <limit
       lower="-1.57"
       upper="1.57"
