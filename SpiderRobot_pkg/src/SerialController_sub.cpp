@@ -81,7 +81,7 @@ int main(int argc, char** argv)
 	ros::Publisher LegStatus_pub = nh.advertise<std_msgs::Char>("LegStatus", 1);
 	// start the subscriber
 	SpiderRobot_pkg::MyArray PosArray;
-	ros::Subscriber motionCommandSubscriber = nh.subscribe("MyArray", 1, motionCommandCallback);
+	ros::Subscriber motionCommandSubscriber = nh.subscribe("/SpiderRobot/BaseJointCommand", 1, motionCommandCallback);
 	ros::Subscriber SingleCommand_sub = nh.subscribe("SingleCommand", 1, SingleCommandCallback);
 	//~ ros::spinOnce();
 	ROS_INFO("Serial Controller ready");
@@ -297,7 +297,7 @@ void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 void SingleCommandCallback(const SpiderRobot_pkg::My2Num::ConstPtr& msg)
 {
 	char buffer[20] = {'\0'}, temp[10] = {'\0'};						// buffer for serial commands, and temp buffer
-	int i, n, uSecPos, result;
+	int n, uSecPos, result;//, i;
 	//~ printf("\nRecived single channel data...\n");
 
 	uSecPos = (int)(11.3333* ((float)msg->pos) + 1500);				// convert to useconds of duty cycle

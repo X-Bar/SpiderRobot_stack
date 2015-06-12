@@ -49,7 +49,7 @@ bool CurrentlyMoving = true;											// flag of whether serial controller retu
 int STATE = 0;															// for state machine
 bool SHUTDOWN = false;													// flag to shutdown while loop
 SpiderRobot_pkg::MyArray PosArray;										// ROS message to publish
-short int LegGroupTurn = 0;											// leg group 0 or 1's turn to move
+short int LegGroupTurn = 0;												// leg group 0 or 1's turn to move
 float Zposition = 0;													// will eventually modify standing height
 float Xstride = 0;														// walking stride in X, Y, Z, and rotation theta
 float Ystride = 0;														
@@ -81,8 +81,6 @@ int FPG1L2_A[3];
 //~ int *FPG1L1_A;
 //~ int *FPG1L2_A;
 
-
-
 //~ float *FPG0L0;														// holds foot plant points in 
 //~ float *FPG0L1;														
 //~ float *FPG0L2;														// cartesian coordinates
@@ -101,7 +99,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;													// make node handle
 	
 	// make publishing object and advertise
-	SpiderRobotMain_pub = nh.advertise<SpiderRobot_pkg::MyArray>("MyArray", 100);
+	SpiderRobotMain_pub = nh.advertise<SpiderRobot_pkg::MyArray>("/SpiderRobot/BaseJointCommand", 100);
 	
 	// make subscribing object for feedback
 	ros::Subscriber LegStatus_sub = nh.subscribe("LegStatus", 1, LegStatusCallback);
@@ -248,7 +246,7 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	HighSpeed = 0;
 	LowSpeed = 0;
 	bool xyMove = false;												// checks for xy move, cancelss theta move
-	bool tMove = false;												// checks for theta move
+	bool tMove = false;													// checks for theta move
 	short int res;														// holds result
 	
 	HighSpeed = 1;
@@ -443,7 +441,7 @@ void shutdownHandler(int s)
 
 short int MoveLegGroupxy(short int LegGroup, float Xstride, float Ystride, float Zstride, int Speed)
 {
-	int res;
+	int res = -1;
 	switch(LegGroup)
 	{
 		case 0:

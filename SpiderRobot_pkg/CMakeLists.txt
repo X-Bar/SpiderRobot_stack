@@ -31,6 +31,7 @@ rosbuild_add_boost_directories()
 
 rosbuild_add_executable(SerialController src/SerialController_sub.cpp)
 rosbuild_add_executable(RobotMain src/RobotMain_pubsub.cpp)
+rosbuild_add_executable(SpoofJointPublisher src/SpoofJointPublisher.cpp)
 rosbuild_add_executable(MovementController_pubsub src/MovementController_pubsub.cpp)
 rosbuild_link_boost(MovementController_pubsub thread)
 #~ target_link_libraries(example ${PROJECT_NAME}/src/MovementController_pubsub.cpp)
