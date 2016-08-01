@@ -233,7 +233,8 @@ void callbackThread()
 	ros::Rate loop_rate(LoopHz);
 	while (n.ok())
 	{
-		g_queue.callAvailable(ros::WallDuration(0.01));					// like soin()
+		// like spin()
+		g_queue.callAvailable(ros::WallDuration(0.01));					
 		loop_rate.sleep();
 	}
 }
