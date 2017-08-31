@@ -107,6 +107,7 @@ int main(int argc, char **argv)
 	
 	int LegAngs[3] = {0};												// temp for holding leg angles
 	PosArray.command = 0;												// update joints via speed
+	//~ PosArray.command = 1;												// update joints via time
 	ros::Rate loop_rate(LoopHz);
 	ROS_INFO ("//// Start up and stand ////");
 	while(ros::ok() && nh.ok() && !SHUTDOWN)
@@ -200,7 +201,7 @@ int main(int argc, char **argv)
 		usleep(PublishDelay);
 		loop_rate.sleep();
 		
-	}// while(ros::ok() && !SHUTDOWN) for startup and stand
+	}// end while(ros::ok() && !SHUTDOWN) for startup and stand
 	SHUTDOWN = false;													// true was just to exit last switch, make false again
 	PosArray.command = 1;												// change to time movements
 	ROS_INFO("SpiderRobot standup complete");
@@ -250,8 +251,10 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 	bool tMove = false;													// checks for theta move
 	short int res;														// holds result
 	
-	HighSpeed = 1;
-	LowSpeed = 2;
+	HighSpeed = 50;
+	LowSpeed = 200;
+	//~ HighSpeed = 100;
+	//~ LowSpeed = 30;
 	
 	// logic, find what type of move we need
 	if( twist->linear.x <= -.1 ||  .1 <= twist->linear.x )				// check minmal value
@@ -303,8 +306,8 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 			//~ // move group 1 up and forward
 			res = MoveLegGroupxy(1, Xstride, Ystride, Zstride, HighSpeed);
 			//~ // move group 0 home
-			res = MoveLegGroupxy(0, 0, 0, 0, LowSpeed);
-			usleep(PublishDelay);
+			//~ res = MoveLegGroupxy(0, 0, 0, 0, LowSpeed);
+			//~ usleep(PublishDelay);
 			
 			//~ // move group 0 back
 			res = MoveLegGroupxy(0, (-1)*Xstride, (-1)*Ystride, 0, LowSpeed);
@@ -325,8 +328,8 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 			//~ // move group 0 up and forward
 			res = MoveLegGroupxy(0, Xstride, Ystride, Zstride, HighSpeed);
 			//~ // move group 1 home
-			res = MoveLegGroupxy(1, 0, 0, 0, LowSpeed);
-			usleep(PublishDelay);
+			//~ res = MoveLegGroupxy(1, 0, 0, 0, LowSpeed);
+			//~ usleep(PublishDelay);
 			
 			//~ // move group 1 back
 			res = MoveLegGroupxy(1, (-1)*Xstride, (-1)*Ystride, 0, LowSpeed);
@@ -348,17 +351,17 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 			usleep(PublishDelay);
 			
 			//~ // move group 1 up and forward
-			res = MoveLegGroupT(1, Tstride, Zstride, HighSpeed);
+			res = MoveLegGroupT(1, (-1)*Tstride, Zstride, HighSpeed);
 			//~ // move group 0 home
 			res = MoveLegGroupT(0, 0, 0, LowSpeed);
 			usleep(2*PublishDelay);
 			
 			//~ // move group 0 back
-			res = MoveLegGroupT(0, (-1)*Tstride, 0, LowSpeed);
+			res = MoveLegGroupT(0, Tstride, 0, LowSpeed);
 			usleep(PublishDelay);
 			
 			//~ // move group 1 down
-			res = MoveLegGroupT(1, Tstride, 0, HighSpeed);
+			res = MoveLegGroupT(1, (-1)*Tstride, 0, HighSpeed);
 			usleep(PublishDelay);
 			
 			LegGroupTurn = 0;
@@ -370,17 +373,17 @@ void RobotTwistCallback(const geometry_msgs::Twist::ConstPtr& twist)
 			usleep(PublishDelay);
 			
 			//~ // move group 0 up and forward
-			res = MoveLegGroupT(0, Tstride, Zstride, HighSpeed);
+			res = MoveLegGroupT(0, (-1)*Tstride, Zstride, HighSpeed);
 			//~ // move group 1 home
 			res = MoveLegGroupT(1, 0, 0, LowSpeed);
 			usleep(2*PublishDelay);
 			
 			//~ // move group 1 back
-			res = MoveLegGroupT(1, (-1)*Tstride, 0, LowSpeed);
+			res = MoveLegGroupT(1, Tstride, 0, LowSpeed);
 			usleep(PublishDelay);
 			
 			//~ // move group 0 down
-			res = MoveLegGroupT(0, Tstride, 0, HighSpeed);
+			res = MoveLegGroupT(0, (-1)*Tstride, 0, HighSpeed);
 			usleep(PublishDelay);
 			
 			LegGroupTurn = 1;

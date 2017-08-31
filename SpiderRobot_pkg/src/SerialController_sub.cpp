@@ -160,14 +160,14 @@ int main(int argc, char** argv)
 //void motionCommandCallback(const std_msgs::Int16MultiArray::ConstPtr& msg)
 void motionCommandCallback(const SpiderRobot_pkg::MyArray::ConstPtr& msg)
 {
-	char bufferR[300];
+	char bufferR[400];
 	switch(msg->command)
 	{
 		case 0: // Update all joint commands via speed
 		{																// command case 0: send command to servos, most common case
 			// char bufferR[300];
-			char temp[10] = {'\0'};										// buffer for serial commands, and temp buffer
-			int i, n, pos[18], uSecPos[18], result;						// counter i, size n, position commands in degree, position commands in usec, result from sending serial data
+			char temp[20] = {'\0'};										// buffer for serial commands, and temp buffer
+			int i, n, pos[20], uSecPos[20], result;						// counter i, size n, position commands in degree, position commands in usec, result from sending serial data
 			printf("\nRecived data for all channels...\n");
 			for(i=0 ; i<18; i++)										// get position values
 			{
