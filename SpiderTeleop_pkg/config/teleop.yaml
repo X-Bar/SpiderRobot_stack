@@ -6,21 +6,21 @@ axis_pan: 0
 axis_tilt: 3
 
 # base velocities
-max_vw: 0.8
-max_vx: 0.5
-max_vy: 0.5
-max_vw_run: 1.4
-max_vx_run: 1.0
-max_vy_run: 1.0
+max_vw: 2.5
+max_vx: 1.5
+max_vy: 1.5
+max_vw_run: 3.0
+max_vx_run: 2.5
+max_vy_run: 2.5
 
 # Below is unused for SpiderRobot and left from pr2
 # Functions may have be disabled in source code. 
 # Head 
-max_pan: 2.7
-max_tilt: 1.4
-min_tilt: -0.4
-tilt_step: 0.3
-pan_step: 0.3
+#max_pan: 2.7
+#max_tilt: 1.4
+#min_tilt: -0.4
+#tilt_step: 0.3
+#pan_step: 0.3
 
 # Buttons have changed for PS3 controller mapping 
 # With joystick remapper, this works with all joysticks on "/joy" 
