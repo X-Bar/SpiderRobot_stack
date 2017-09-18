@@ -3,7 +3,7 @@
 
 ## Current Startup for joystick teleop  
 
-``bash
+```bash
 $ rosrun ps3joy ps3joy.py  
 $ rosrun joy joy_node  
 $ roslaunch SpiderTeleop_pkg teleop_joystick.launch  
