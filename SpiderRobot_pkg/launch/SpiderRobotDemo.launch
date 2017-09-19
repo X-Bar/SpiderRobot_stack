@@ -1,4 +1,9 @@
 <launch>
+	<node pkg = "ps3joy" name = "ps3joy" type = "ps3joy.py  " />
+	<node pkg = "joy" name = "joy_node" type = "joy_node.py" />
+	
 	<node pkg = "SpiderRobot_pkg" name = "SerialController" type = "SerialController" />
 	<node pkg = "SpiderRobot_pkg" name = "MovementController_pubsub" type = "MovementController_pubsub" output="screen"/>
+	
+	#include <SpiderTeleop_pkg/teleop_joystick.launch>
 </launch>
