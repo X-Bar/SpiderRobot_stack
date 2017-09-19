@@ -105,6 +105,8 @@ int main(int argc, char **argv)
 	ros::Subscriber LegStatus_sub = nh.subscribe("LegStatus", 1, LegStatusCallback);
 	//~ ROS_INFO_STREAM("Main thread id=" << boost::this_thread::get_id());
 	
+	ros::Duration(1.0).sleep(); 										// let subs and pub connect
+	
 	int LegAngs[3] = {0};												// temp for holding leg angles
 	PosArray.command = 0;												// update joints via speed
 	//~ PosArray.command = 1;												// update joints via time
